@@ -54,12 +54,15 @@ Extracted from the live site's Elementor kit (`post-37123.css`) rather than inve
 | Role | Value |
 |---|---|
 | Display | `Akhand` Bold — uppercase, line-height 1 |
-| Labels / eyebrows | `Eurostile Extended Black` — uppercase, letter-spaced |
+| Utility labels | `Eurostile Extended Black` — uppercase, letter-spaced |
+| Nav | `GT America Standard` — uppercase, .82rem, centred wordmark |
 | Body | `GT America Standard` |
 | Ink | `#151515` |
 | Raised surface | `#212121` |
 | Bone | `#F0EFE6` |
-| Gold accent | `#C59F55` |
+| Brand orange (accent) | `#EC5516` — from the live header nav Contact button |
+| Accent hover | `#FF6A33` |
+| Accent on bone | `#B8400E` — darkened for small labels |
 | Muted text | `#9D9D9D` (dark) / `#6B6454` (bone) |
 | Buttons | `border-radius: 100px` |
 
