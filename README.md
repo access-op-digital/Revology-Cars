@@ -83,7 +83,7 @@ All six brand webfonts are loaded via `@font-face` from `revologycars.com`, as a
 | Manufacturing | `2026/08/manufacturing-mindset-revology.jpeg` — body-in-white in fixture + `2025/11/revology-1969-boss-mustang-429-nov2025-29.jpeg` — finished Boss 429 |
 | Team | `2025/06/dr1a*.jpeg` ×7 + `2026/04/revology-all-staff-2026-1.jpg` |
 | Location | YouTube `R7cSaljHbiM` ("Inside the Factory") + keyless Google Maps embed |
-| CTA | `2026/07/revology-1970-boss302-home-1.jpg` |
+| CTA | `2025/11/revology-1969-mustang-boss-429-title.jpg` — full-bleed background behind the copy |
 
 ---
 

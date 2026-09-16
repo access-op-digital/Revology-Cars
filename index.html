@@ -360,26 +360,32 @@ figcaption{
    centring left the image floating against nothing. It now stretches,
    and the car is contained rather than cropped - the source is a studio
    shot on white, so a white panel behind it reads as one plate. */
-/* the car runs full bleed behind the section and the copy sits over it.
-   The scrim is bone rather than black - the source is a studio shot on
-   white, so it washes the left into the section ground and leaves the
-   car reading on the right. */
-.cta{position:relative;overflow:hidden}
+/* Full-bleed car with the copy over it. Dark ground and white text: a
+   light scrim over a light photo gave almost nothing to read against. */
+.cta{position:relative;overflow:hidden;background:#101010;color:var(--white)}
 .cta__bg{position:absolute;inset:0}
-.cta__bg img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.cta__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
 .cta__scrim{
   position:absolute;inset:0;
-  background:linear-gradient(to right,
-    rgba(240,239,230,.98) 0%,
-    rgba(240,239,230,.92) 32%,
-    rgba(240,239,230,.45) 58%,
-    rgba(240,239,230,.05) 82%);
+  background:
+    linear-gradient(to right,
+      rgba(11,11,11,.96) 0%,
+      rgba(11,11,11,.92) 40%,
+      rgba(11,11,11,.6) 62%,
+      rgba(11,11,11,.3) 82%,
+      rgba(11,11,11,.22) 100%),
+    linear-gradient(to bottom,rgba(11,11,11,.45),rgba(11,11,11,.25) 45%,rgba(11,11,11,.5));
 }
 .cta__in{position:relative}
-.cta__copy{max-width:min(58ch,54%)}
+.cta__copy{max-width:min(58ch,56%)}
+/* steps live only here, so they take the dark ground's colours */
+.cta .steps li,.cta .steps li:last-child{border-color:var(--rule-dark)}
+.cta .steps__t{color:var(--white)}
+.cta .steps__t::before{color:var(--accent)}
+.cta .steps__d{color:#C4C3BF}
 @media (max-width:860px){
-  /* no room to sit beside the car, so wash the whole frame instead */
-  .cta__scrim{background:linear-gradient(to bottom,rgba(240,239,230,.96),rgba(240,239,230,.93))}
+  /* no room beside the car, so wash the whole frame evenly */
+  .cta__scrim{background:linear-gradient(to bottom,rgba(11,11,11,.9),rgba(11,11,11,.88))}
   .cta__copy{max-width:none}
 }
 @media (max-width:860px){.cta__in{grid-template-columns:1fr}}
@@ -827,10 +833,11 @@ figcaption{
   </section>
 
   <!-- ==================== CTA ==================== -->
-  <section class="band band--bone cta" id="build">
+  <section class="band cta" id="build">
     <div class="cta__bg">
-      <img src="https://revologycars.com/wp-content/uploads/2026/07/revology-1970-boss302-home-1.jpg"
-           alt="Studio profile view of the Revology 1970 Mustang Boss 302" loading="lazy">
+      <img src="https://revologycars.com/wp-content/uploads/2025/11/revology-1969-mustang-boss-429-title.jpg"
+           alt="A blue Revology 1969 Mustang Boss 429 parked outside the Orlando factory"
+           width="1210" height="1000" loading="lazy">
     </div>
     <div class="cta__scrim"></div>
     <div class="wrap cta__in">
