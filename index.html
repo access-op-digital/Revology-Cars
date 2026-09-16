@@ -223,7 +223,11 @@ figcaption{
 .hero .lede{color:#D8D7D3;max-width:62ch;font-size:clamp(1rem,.95rem + .35vw,1.18rem)}
 
 /* ---------- Figures band ---------- */
-.figures{border-block:1px solid var(--rule-dark);background:var(--ink-3)}
+/* sits directly on top of the manufacturing band, which shares its
+   background, so it carries only a top rule and the band below it
+   drops its usual top padding */
+.figures{border-top:1px solid var(--rule-dark);background:var(--ink-3)}
+.figures + .band{padding-block-start:clamp(2.25rem,3.5vw,3.5rem)}
 .figures__grid{
   display:grid;grid-template-columns:repeat(6,1fr);
   padding-block:clamp(2rem,3.5vw,2.75rem);gap:2rem 1.25rem;
@@ -442,37 +446,6 @@ figcaption{
       </div>
     </div>
   </section>
-
-  <!-- ==================== FIGURES ==================== -->
-  <section class="figures" aria-label="Revology by the numbers">
-    <div class="wrap figures__grid">
-      <div>
-        <div class="fig__n">2014</div>
-        <div class="fig__l">Operations begin<br>in Orlando</div>
-      </div>
-      <div>
-        <div class="fig__n">360<span>+</span></div>
-        <div class="fig__l">Cars delivered<br>as of May 2026</div>
-      </div>
-      <div>
-        <div class="fig__n">20</div>
-        <div class="fig__l">Countries across<br>four continents</div>
-      </div>
-      <div>
-        <div class="fig__n">170</div>
-        <div class="fig__l">Team members<br>as of May 2026</div>
-      </div>
-      <div>
-        <div class="fig__n">65,757</div>
-        <div class="fig__l">Sq ft climate-<br>controlled factory</div>
-      </div>
-      <div>
-        <div class="fig__n">24</div>
-        <div class="fig__l">Weeks of<br>production per car</div>
-      </div>
-    </div>
-  </section>
-
   <!-- ==================== ORIGIN STORY ==================== -->
   <section class="band band--bone" id="origin">
     <div class="wrap">
@@ -595,6 +568,36 @@ figcaption{
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FIGURES ==================== -->
+  <section class="figures" aria-label="Revology by the numbers">
+    <div class="wrap figures__grid">
+      <div>
+        <div class="fig__n">2014</div>
+        <div class="fig__l">Operations begin<br>in Orlando</div>
+      </div>
+      <div>
+        <div class="fig__n">360<span>+</span></div>
+        <div class="fig__l">Cars delivered<br>as of May 2026</div>
+      </div>
+      <div>
+        <div class="fig__n">20</div>
+        <div class="fig__l">Countries across<br>four continents</div>
+      </div>
+      <div>
+        <div class="fig__n">170</div>
+        <div class="fig__l">Team members<br>as of May 2026</div>
+      </div>
+      <div>
+        <div class="fig__n">65,757</div>
+        <div class="fig__l">Sq ft climate-<br>controlled factory</div>
+      </div>
+      <div>
+        <div class="fig__n">24</div>
+        <div class="fig__l">Weeks of<br>production per car</div>
       </div>
     </div>
   </section>
