@@ -341,7 +341,12 @@ figcaption{
 .origin-film{margin-top:clamp(2.5rem,5vw,4rem)}
 
 /* ---------- Location ---------- */
-.loc{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--gap);align-items:start}
+/* copy left, film and map right. The map takes flex:1 so the pair
+   finishes level with the bottom of the address block. */
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:stretch}
+.loc__media{display:flex;flex-direction:column;gap:1.5rem}
+.loc__map{position:relative;flex:1;min-height:17rem;background:#0F0F0F;border:1px solid var(--rule-dark)}
+.loc__map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media (max-width:900px){.loc{grid-template-columns:1fr}}
 .addr{font-style:normal;margin-top:2rem;border-top:1px solid var(--rule-dark);padding-top:1.75rem}
 .addr dl{display:grid;grid-template-columns:minmax(6rem,auto) 1fr;gap:.9rem 1.75rem;margin:0}
@@ -761,23 +766,6 @@ figcaption{
 
       <div class="loc">
         <div>
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/R7cSaljHbiM?rel=0"
-                    title="Revology Cars: Inside the Factory"
-                    loading="lazy" allowfullscreen
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-          </div>
-          <figure style="margin-top:1.5rem">
-            <div class="media-frame media-frame--pano">
-              <img src="https://revologycars.com/wp-content/uploads/2023/08/RevologyHQ.jpg"
-                   alt="Aerial view of the Revology Cars factory at 2252 Commerce Park Drive, Orlando"
-                   loading="lazy">
-            </div>
-            <figcaption>Revology headquarters and manufacturing facility, Commerce Park Drive</figcaption>
-          </figure>
-        </div>
-
-        <div>
           <div class="body">
             <p>Every Revology vehicle is designed and built at our headquarters and manufacturing facility in Orlando, Florida. Located on Commerce Park Drive, our facility brings engineering, body fabrication, paint, trim, final assembly, and quality validation together under one roof.</p>
             <p>Our 65,757-square-foot manufacturing facility is designed to support the complete vehicle production process, with dedicated systems for maintaining a controlled and efficient working environment. At any given time, multiple Revology vehicles move through production as our team applies careful engineering, craftsmanship, and quality-focused manufacturing practices.</p>
@@ -798,6 +786,20 @@ figcaption{
           </address>
 
           <p class="note">We encourage prospective clients to visit the factory and test drive a Revology. Availability is limited, so appointments must be arranged in advance &mdash; and Revology does not currently offer general public factory tours.</p>
+        </div>
+
+        <div class="loc__media">
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/R7cSaljHbiM?rel=0"
+                    title="Revology Cars: Inside the Factory"
+                    loading="lazy" allowfullscreen
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          </div>
+          <div class="loc__map">
+            <iframe src="https://www.google.com/maps?q=2252+Commerce+Park+Drive+Suite+350,+Orlando,+FL+32819&amp;z=15&amp;output=embed"
+                    title="Map showing Revology Cars at 2252 Commerce Park Drive, Orlando, Florida"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </div>
