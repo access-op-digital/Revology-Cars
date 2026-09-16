@@ -223,10 +223,11 @@ figcaption{
 .hero .lede{color:#D8D7D3;max-width:62ch;font-size:clamp(1rem,.95rem + .35vw,1.18rem)}
 
 /* ---------- Figures band ---------- */
-/* sits directly on top of the manufacturing band, which shares its
-   background, so it carries only a top rule and the band below it
-   drops its usual top padding */
-.figures{border-top:1px solid var(--rule-dark);background:var(--ink-3)}
+/* recessed near-black so it reads as its own band against the #212121
+   manufacturing section below, with rules top and bottom for definition.
+   The band below still drops its usual top padding, since this one
+   supplies the breathing room. */
+.figures{border-block:1px solid var(--rule-dark);background:#0C0C0C}
 .figures + .band{padding-block-start:clamp(2.25rem,3.5vw,3.5rem)}
 .figures__grid{
   display:grid;grid-template-columns:repeat(6,1fr);
