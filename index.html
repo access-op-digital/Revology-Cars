@@ -248,6 +248,10 @@ figcaption{
    column width, since the layout there is the point. */
 .section-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
 .section-head .lede{max-width:none}
+/* balance evens the lines out, which on a two-line heading leaves both
+   of them short of the right edge. pretty fills each line instead, while
+   still keeping a lone word off the last line. */
+.section-head h2{text-wrap:pretty}
 
 /* ---------- Founder letter ---------- */
 .letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
