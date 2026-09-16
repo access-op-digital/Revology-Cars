@@ -241,13 +241,21 @@ figcaption{
 .section-head{max-width:66ch;margin-bottom:clamp(2.5rem,5vw,4rem)}
 
 /* ---------- Founder letter ---------- */
-.letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:start}
-@media (max-width:900px){.letter{grid-template-columns:1fr}}
+.letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
+/* the portrait takes up whatever height the copy column has spare,
+   so the quote closes the column instead of leaving a hole under it */
+.letter__aside{display:flex;flex-direction:column;gap:2.25rem}
+.letter__aside figure{display:flex;flex-direction:column;flex:1}
+.letter__aside .media-frame{flex:1;aspect-ratio:auto;min-height:19rem}
 .pull{
   font-family:var(--f-display);font-weight:700;line-height:1.18;
   font-size:clamp(1.25rem,1.05rem + .8vw,1.75rem);
-  color:var(--ink);margin:2.25rem 0 0;padding-left:1.4rem;border-left:3px solid var(--accent);
+  color:var(--ink);margin:0;padding-left:1.4rem;border-left:3px solid var(--accent);
   max-width:32ch;text-wrap:pretty;
+}
+@media (max-width:900px){
+  .letter{grid-template-columns:1fr}
+  .letter__aside .media-frame{flex:0 0 auto;aspect-ratio:16/10;min-height:0}
 }
 .sig{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--rule-bone)}
 .sig__name{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:1.35rem;line-height:1;color:var(--ink)}
@@ -471,7 +479,7 @@ figcaption{
       </div>
 
       <div class="letter">
-        <div>
+        <div class="letter__aside">
           <figure>
             <div class="media-frame media-frame--wide">
               <img src="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg"
