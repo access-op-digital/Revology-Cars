@@ -406,15 +406,15 @@ figcaption{
 /* ---------- Final CTA banner ---------- */
 /* bone, so the page closes light between the dark CTA above it and the
    footer below. Statement left, actions right - not a centred stack. */
-.final{background:var(--bone);color:var(--ink);padding-block:clamp(2.75rem,5vw,4.25rem)}
-.final__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.75rem 3rem}
+.final{background:var(--bone);color:var(--ink);padding-block:clamp(2.75rem,5vw,4.5rem)}
+/* stacked and edge to edge - no capped measure, nothing sitting beside it */
 .final__t{
   font-family:var(--f-display);font-weight:700;text-transform:uppercase;line-height:1.02;
-  font-size:clamp(1.6rem,1.2rem + 1.6vw,2.5rem);margin:0;max-width:26ch;text-wrap:balance;
+  font-size:clamp(1.6rem,1.2rem + 1.9vw,2.9rem);margin:0;max-width:none;text-wrap:pretty;
 }
-.final__d{margin:.75rem 0 0;color:var(--mute-on-bone);max-width:46ch}
-.final__act{display:flex;align-items:center;flex-wrap:wrap;gap:1.25rem 2rem}
-.final__direct{display:flex;flex-direction:column;gap:.4rem;font-size:.95rem}
+.final__d{margin:1rem 0 0;color:var(--mute-on-bone);max-width:none}
+.final__act{display:flex;align-items:center;flex-wrap:wrap;gap:1.25rem 2.25rem;margin-top:2rem}
+.final__direct{display:flex;flex-wrap:wrap;gap:.4rem 1.75rem;font-size:.95rem}
 .final__direct a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;align-self:flex-start}
 .final__direct a:hover{color:var(--accent-ink)}
 
@@ -887,10 +887,8 @@ figcaption{
   <!-- ==================== FINAL CTA BANNER ==================== -->
   <section class="final" aria-label="Contact Revology Cars">
     <div class="wrap final__in">
-      <div>
-        <p class="final__t">Configure Your Precision-Engineered Mustang</p>
-        <p class="final__d">Talk to the client relations team about specification, availability and current lead time.</p>
-      </div>
+      <p class="final__t">Configure Your Precision-Engineered Mustang</p>
+      <p class="final__d">Create a modern interpretation of an iconic Mustang with guidance from our client relations team. Discuss your preferred model, specifications, availability, and current production timeline to begin your Revology journey.</p>
       <div class="final__act">
         <a class="btn btn--accent" href="https://revologycars.com/contact-us/">Contact Us</a>
         <div class="final__direct">
