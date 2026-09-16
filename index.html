@@ -29,7 +29,6 @@
   --ink-2:#1B1B1B;
   --ink-3:#212121;
   --bone:#F0EFE6;
-  --bone-2:#E5E3D6;
   /* brand orange, from the live header nav Contact button */
   --accent:#EC5516;
   --accent-lift:#FF6A33;
@@ -357,7 +356,17 @@ figcaption{
 .addr a:hover{color:var(--accent)}
 
 /* ---------- Final CTA ---------- */
-.cta__in{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:center}
+/* the steps column runs about twice the height of a 16:10 photo, so
+   centring left the image floating against nothing. It now stretches,
+   and the car is contained rather than cropped - the source is a studio
+   shot on white, so a white panel behind it reads as one plate. */
+.cta__in{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:stretch}
+.cta__media{display:flex;flex-direction:column}
+.cta__media .media-frame{flex:1;aspect-ratio:auto;min-height:18rem;background:#FFFFFF}
+.cta__media img{object-fit:contain;padding:clamp(.75rem,2vw,1.75rem)}
+@media (max-width:860px){
+  .cta__media .media-frame{flex:0 0 auto;aspect-ratio:16/10;min-height:0}
+}
 @media (max-width:860px){.cta__in{grid-template-columns:1fr}}
 .steps{margin:2.25rem 0 0;padding:0;list-style:none;counter-reset:s}
 .steps li{
@@ -822,8 +831,8 @@ figcaption{
           </div>
         </div>
 
-        <figure>
-          <div class="media-frame media-frame--wide" style="background:var(--bone-2)">
+        <figure class="cta__media">
+          <div class="media-frame">
             <img src="https://revologycars.com/wp-content/uploads/2026/07/revology-1970-boss302-home-1.jpg"
                  alt="Studio profile view of the Revology 1970 Mustang Boss 302"
                  loading="lazy">
