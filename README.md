@@ -76,8 +76,8 @@ All six brand webfonts are loaded via `@font-face` from `revologycars.com`, as a
 
 | Section | Asset |
 |---|---|
-| Hero | `2026/04/revology1.jpg` — 1970 Boss 302 rolling shot |
-| Origin story | `2024/05/Tom-About-2.jpeg` — Tom Scarpello |
+| Hero | `2024/05/Tom-About-2.jpeg` — founder Tom Scarpello |
+| Origin story | `2026/04/revology1.jpg` — 1970 Boss 302 rolling shot + YouTube `xlStTBAeTyA` (tenth anniversary) |
 | OEM approach | `2024/05/scanning.jpg` — body shell 3D scan |
 | Vehicle dynamics | `2026/07/1969-revology-mustang-boss-429-363-36.webp` — car #363 |
 | Manufacturing | `2026/08/manufacturing-mindset-revology.jpeg` — body-in-white in fixture |

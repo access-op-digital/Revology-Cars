@@ -210,7 +210,7 @@ figcaption{
 /* ---------- Hero ---------- */
 .hero{position:relative;background:#0D0D0D;overflow:hidden}
 .hero__media{position:absolute;inset:0}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:58% 62%;opacity:.85}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:62% 42%;opacity:.9}
 .hero__scrim{
   position:absolute;inset:0;
   background:
@@ -312,6 +312,8 @@ figcaption{
 /* ---------- Video ---------- */
 .video{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--rule-dark)}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.band--bone .video{border-color:var(--rule-bone)}
+.origin-film{margin-top:clamp(2.5rem,5vw,4rem)}
 
 /* ---------- Location ---------- */
 .loc{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--gap);align-items:start}
@@ -415,9 +417,9 @@ figcaption{
   <!-- ==================== HERO ==================== -->
   <section class="hero">
     <div class="hero__media">
-      <img src="https://revologycars.com/wp-content/uploads/2026/04/revology1.jpg"
-           alt="A Revology 1970 Mustang Boss 302 in orange at speed on an open road in low evening light"
-           width="1920" height="1280" fetchpriority="high">
+      <img src="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg"
+           alt="Revology founder and CEO Tom Scarpello standing beside a blue Revology Mustang GT fastback on the Pacific coast"
+           width="1080" height="608" fetchpriority="high">
     </div>
     <div class="hero__scrim"></div>
     <div class="wrap hero__in">
@@ -472,11 +474,11 @@ figcaption{
         <div>
           <figure>
             <div class="media-frame media-frame--wide">
-              <img src="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg"
-                   alt="Revology founder and CEO Tom Scarpello standing beside a blue Revology Mustang GT fastback on the coast"
-                   width="1080" height="608" loading="lazy">
+              <img src="https://revologycars.com/wp-content/uploads/2026/04/revology1.jpg"
+                   alt="A Revology 1970 Mustang Boss 302 in orange at speed on an open road in low evening light"
+                   width="1920" height="1280" loading="lazy">
             </div>
-            <figcaption>Tom Scarpello, Founder &amp; CEO</figcaption>
+            <figcaption>The result &mdash; a Revology 1970 Mustang Boss 302 on the road</figcaption>
           </figure>
           <blockquote class="pull">&ldquo;This is my life&rsquo;s work.&rdquo;</blockquote>
         </div>
@@ -493,6 +495,16 @@ figcaption{
           </div>
         </div>
       </div>
+
+      <figure class="origin-film">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/xlStTBAeTyA?rel=0"
+                  title="Revology Cars celebrates its tenth year anniversary"
+                  loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        </div>
+        <figcaption>Revology Cars celebrates its tenth year anniversary</figcaption>
+      </figure>
 
       <!-- Dated sequence: these are real, ordered milestones -->
       <div class="timeline">
