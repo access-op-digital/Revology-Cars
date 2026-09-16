@@ -283,16 +283,17 @@ figcaption{
 }
 .pillar .body{margin-top:1.25rem}
 
-/* ---------- Process chips ---------- */
-.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin:2rem 0 0;padding:0;list-style:none}
-.chips li{
-  font-family:var(--f-label);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
-  border:1px solid var(--rule-dark);color:#CFCFCC;padding:.55rem 1rem;border-radius:100px;
-}
-
 /* ---------- Split (manufacturing) ---------- */
-.split{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--gap);align-items:center}
-@media (max-width:900px){.split{grid-template-columns:1fr}}
+/* stretch, not center, so the first image's top edge lines up with the heading */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:stretch}
+/* two stacked images share the column height between them, so the pair
+   fills the copy alongside instead of leaving dead space */
+.split__media{display:flex;flex-direction:column;gap:clamp(1rem,2vw,1.5rem)}
+.split__media .media-frame{flex:1;aspect-ratio:auto;min-height:13rem}
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .split__media .media-frame{flex:0 0 auto;aspect-ratio:16/10;min-height:0}
+}
 
 /* ---------- Build sheet ---------- */
 .sheet{border-top:2px solid var(--ink);margin-top:clamp(2rem,4vw,3rem)}
@@ -602,32 +603,27 @@ figcaption{
   <section class="band band--ink3" id="manufacturing">
     <div class="wrap">
       <div class="split">
-        <figure>
+        <div class="split__media">
           <div class="media-frame media-frame--wide">
             <img src="https://revologycars.com/wp-content/uploads/2026/08/manufacturing-mindset-revology.jpeg"
                  alt="A Mustang body-in-white held in a red welding fixture on the Revology production floor"
                  width="1200" height="900" loading="lazy">
           </div>
-          <figcaption>Body-in-white in a dedicated welding fixture, Orlando production floor</figcaption>
-        </figure>
+          <div class="media-frame media-frame--wide">
+            <img src="https://revologycars.com/wp-content/uploads/2025/11/revology-1969-boss-mustang-429-nov2025-29.jpeg"
+                 alt="Studio profile of a finished Revology 1969 Mustang Boss 429 in orange"
+                 width="1600" height="1067" loading="lazy">
+          </div>
+        </div>
         <div>
           <h2>Automotive Engineering and Manufacturing at Revology</h2>
           <hr class="h-rule">
           <div class="body" style="margin-top:1.75rem">
-            <p><strong>Great engineering only matters if it can be reproduced consistently.</strong></p>
-            <p>Revology operates with a manufacturing mindset rather than the traditional specialty-car-shop model. Our team applies disciplined processes: tooling and fixture development, cycle-time management, line balancing, PPAP, FMEA, measurement systems analysis and statistical process control.</p>
-            <p>These practices let us build vehicles consistently and improve them over time. Since 2014, hundreds of functional improvements have been incorporated into the Revology platform &mdash; addressing vehicle dynamics, drivability, noise, vibration, water sealing, comfort, durability and serviceability.</p>
-            <p>The objective is simple: every Revology should perform to the same standard &mdash; not because one particular car was built exceptionally well, but because the product and the process were engineered to make it so.</p>
+            <p>Revology Cars applies automotive engineering principles to the development and manufacturing of modern classic Mustang and Shelby GT vehicles. Our process goes beyond assembling individual components by using structured development methods, engineering validation, and manufacturing controls to create complete, repeatable automobiles.</p>
+            <p>Our engineering team uses processes such as Production Part Approval Process (PPAP), Failure Mode and Effects Analysis (FMEA), tooling and fixture development, and Statistical Process Control (SPC) to support quality, consistency, and manufacturing precision. These automotive quality methods help identify potential issues, validate processes, and maintain control throughout vehicle development and production.</p>
+            <p>Since beginning production in 2014, we have continuously refined the Revology vehicle platform through ongoing engineering improvements. Over time, hundreds of functional improvements have been incorporated into the platform, enhancing areas such as reliability, serviceability, performance, and overall vehicle refinement.</p>
+            <p>From our Orlando, Florida manufacturing facility, we design and build reproduction Mustang and Shelby GT vehicles using a platform-based approach that allows each automobile to benefit from continuous development while preserving the classic Mustang character.</p>
           </div>
-          <ul class="chips">
-            <li>Tooling &amp; fixtures</li>
-            <li>Cycle-time management</li>
-            <li>Line balancing</li>
-            <li>PPAP</li>
-            <li>FMEA</li>
-            <li>Measurement systems analysis</li>
-            <li>Statistical process control</li>
-          </ul>
         </div>
       </div>
     </div>

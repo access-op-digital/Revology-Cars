@@ -80,7 +80,7 @@ All six brand webfonts are loaded via `@font-face` from `revologycars.com`, as a
 | Origin story | `2024/05/Tom-About-2.jpeg` — Tom Scarpello + YouTube `xlStTBAeTyA` (tenth anniversary) |
 | OEM approach | `2024/05/scanning.jpg` — body shell 3D scan |
 | Vehicle dynamics | `2026/07/1969-revology-mustang-boss-429-363-36.webp` — car #363 |
-| Manufacturing | `2026/08/manufacturing-mindset-revology.jpeg` — body-in-white in fixture |
+| Manufacturing | `2026/08/manufacturing-mindset-revology.jpeg` — body-in-white in fixture + `2025/11/revology-1969-boss-mustang-429-nov2025-29.jpeg` — finished Boss 429 |
 | Team | `2025/06/dr1a*.jpeg` ×7 + `2026/04/revology-all-staff-2026-1.jpg` |
 | Location | `2023/08/RevologyHQ.jpg` + YouTube `R7cSaljHbiM` ("Inside the Factory") |
 | CTA | `2026/07/revology-1970-boss302-home-1.jpg` |
