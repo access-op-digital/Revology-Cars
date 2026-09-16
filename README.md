@@ -36,7 +36,7 @@ vercel.json    routing, security headers, noindex
 
 One H1 and seven H2s, matching the agreed outline:
 
-1. `H1` About Revology: Redefining the Original Mustang
+1. `H1` About Revology: Redefining the Classic Mustang
 2. `H2` The Origin Story of Revology Cars
 3. `H2` Re-Engineering Classic Mustangs With Modern Technology
 4. `H2` Automotive Engineering and Manufacturing at Revology
