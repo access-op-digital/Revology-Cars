@@ -239,6 +239,8 @@ figcaption{
 
 /* ---------- Section heads ---------- */
 .section-head{max-width:66ch;margin-bottom:clamp(2.5rem,5vw,4rem)}
+/* runs the head and its lede edge to edge instead of capping the measure */
+.section-head--full,.section-head--full .lede{max-width:none}
 
 /* ---------- Founder letter ---------- */
 .letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
@@ -552,27 +554,26 @@ figcaption{
   <!-- ==================== RE-ENGINEERING ==================== -->
   <section class="band band--ink" id="engineering">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head section-head--full">
         <h2>Re-Engineering Classic Mustangs With Modern Technology</h2>
         <hr class="h-rule">
-        <p class="lede">Every Revology starts from a developed vehicle platform &mdash; not a one-off build. That single decision governs everything downstream.</p>
+        <p class="lede">Every Revology vehicle is developed from a dedicated vehicle platform rather than created as a one-off modification. Revology Cars engineers each platform to support the integration of modern automotive systems and components, creating reproduction Mustang and Shelby GT vehicles that are designed as complete automobiles. This platform-based approach enables consistency, continuous refinement, and the integration of classic Mustang design with modern engineering.</p>
       </div>
 
       <div class="pillars">
         <article class="pillar">
-          <figure class="pillar__media">
+          <div class="pillar__media">
             <div class="media-frame media-frame--wide">
               <img src="https://revologycars.com/wp-content/uploads/2024/05/scanning.jpg"
                    alt="A Revology engineer 3D-scanning a primed Mustang fastback body shell marked with reference targets"
                    width="1040" height="585" loading="lazy">
             </div>
-            <figcaption>Digitizing a body shell during platform development</figcaption>
-          </figure>
+          </div>
           <div>
-            <h3>Engineered like an automaker, not a shop</h3>
+            <h3>Engineered Like an Automaker, Not a Shop</h3>
             <div class="body">
-              <p>Revology takes an OEM approach to developing the classic Mustang and Shelby GT. Rather than engineering each vehicle as a one-off build, every Revology is based on a carefully developed vehicle platform designed to integrate modern OEM components and systems.</p>
-              <p>That requires significant engineering and validation. The benefits are fundamental: <strong>consistency, reliability, serviceability and continuous improvement.</strong> The result isn&rsquo;t simply a beautifully built classic Mustang &mdash; it is a properly engineered automobile, designed to perform reliably, drive exceptionally well, and be practical to own.</p>
+              <p>We apply an OEM-style approach to developing classic Mustang and Shelby GT vehicles. Instead of building each vehicle independently, we develop a platform designed to integrate modern automotive systems while preserving the styling, character, and heritage of the original Mustang.</p>
+              <p>This engineering process focuses on <strong>system integration, reliability, serviceability, and continuous improvement.</strong> The result is a modern classic Mustang designed to deliver the craftsmanship of a specialty automobile with the functionality expected from a contemporary vehicle.</p>
             </div>
           </div>
         </article>
@@ -587,11 +588,10 @@ figcaption{
             <figcaption>Revology 1969 Mustang Boss 429, production car #363</figcaption>
           </figure>
           <div>
-            <h3>Engineered to drive</h3>
+            <h3>Designed for the Driving Experience</h3>
             <div class="body">
-              <p>Horsepower is easy to measure. Vehicle dynamics are harder to quantify &mdash; and immediately apparent from behind the wheel. Steering response, chassis balance, body control, ride quality, braking stability and high-speed confidence all determine how a car feels and how much confidence it gives its driver.</p>
-              <p>Revology engineers these characteristics <strong>as an integrated system.</strong> Suspension geometry, spring and damper tuning, steering, brakes, tires, chassis structure, weight distribution and powertrain calibration are developed to work together &mdash; not simply selected from a catalog of high-performance components.</p>
-              <p>The result is a car that responds precisely, stays composed over imperfect roads, and inspires confidence at highway speed or on a winding road.</p>
+              <p>A great driving experience depends on more than horsepower alone. We engineer the relationship between the vehicle&rsquo;s systems, including <strong>suspension, steering, braking, chassis, tires, and powertrain,</strong> so they work together as a complete package.</p>
+              <p>By combining classic Mustang design with modern engineering principles, Revology creates vehicles that deliver the character of an iconic automobile with the confidence, comfort, and drivability of a modern performance vehicle.</p>
             </div>
           </div>
         </article>
