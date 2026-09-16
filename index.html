@@ -71,18 +71,6 @@ a{color:inherit}
 .band--ink3{background:var(--ink-3);color:var(--white)}
 .band--bone{background:var(--bone);color:var(--ink)}
 .band--bone .lede,.band--bone .body{color:var(--mute-on-bone)}
-.band--bone .eyebrow{color:var(--gold-ink)}
-
-.eyebrow{
-  font-family:var(--f-label);
-  font-size:.7rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin:0 0 1.1rem;
-  display:flex;align-items:center;gap:.75rem;
-}
-.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.35;max-width:5rem}
 
 h1,h2,h3{font-family:var(--f-display);font-weight:700;text-transform:uppercase;line-height:1;letter-spacing:0;text-wrap:balance;margin:0}
 h1{font-size:clamp(2.4rem,1.3rem + 4.7vw,5.5rem)}
@@ -214,7 +202,6 @@ figcaption{
   .pillar{grid-template-columns:1fr}
   .pillar:nth-child(even) .pillar__media{order:0}
 }
-.pillar__k{font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 .9rem}
 .pillar .body{margin-top:1.25rem}
 
 /* ---------- Process chips ---------- */
@@ -374,7 +361,6 @@ figcaption{
   <section class="band band--bone" id="origin">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">How it started</p>
         <h2>The Origin Story of Revology Cars</h2>
         <hr class="h-rule">
       </div>
@@ -407,7 +393,6 @@ figcaption{
 
       <!-- Dated sequence: these are real, ordered milestones -->
       <div class="timeline">
-        <p class="eyebrow">Milestones</p>
         <div class="timeline__grid">
           <div class="tl">
             <div class="tl__yr">2014</div>
@@ -448,7 +433,6 @@ figcaption{
   <section class="band band--ink" id="engineering">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">The approach</p>
         <h2>Re-Engineering Classic Mustangs With Modern Technology</h2>
         <hr class="h-rule">
         <p class="lede">Every Revology starts from a developed vehicle platform &mdash; not a one-off build. That single decision governs everything downstream.</p>
@@ -465,7 +449,6 @@ figcaption{
             <figcaption>Digitizing a body shell during platform development</figcaption>
           </figure>
           <div>
-            <p class="pillar__k">Pillar one &mdash; OEM approach</p>
             <h3>Engineered like an automaker, not a shop</h3>
             <div class="body">
               <p>Revology takes an OEM approach to developing the classic Mustang and Shelby GT. Rather than engineering each vehicle as a one-off build, every Revology is based on a carefully developed vehicle platform designed to integrate modern OEM components and systems.</p>
@@ -484,7 +467,6 @@ figcaption{
             <figcaption>Revology 1969 Mustang Boss 429, production car #363</figcaption>
           </figure>
           <div>
-            <p class="pillar__k">Pillar two &mdash; vehicle dynamics</p>
             <h3>Engineered to drive</h3>
             <div class="body">
               <p>Horsepower is easy to measure. Vehicle dynamics are harder to quantify &mdash; and immediately apparent from behind the wheel. Steering response, chassis balance, body control, ride quality, braking stability and high-speed confidence all determine how a car feels and how much confidence it gives its driver.</p>
@@ -510,7 +492,6 @@ figcaption{
           <figcaption>Body-in-white in a dedicated welding fixture, Orlando production floor</figcaption>
         </figure>
         <div>
-          <p class="eyebrow">Inside the factory</p>
           <h2>Automotive Engineering and Manufacturing at Revology</h2>
           <hr class="h-rule">
           <div class="body" style="margin-top:1.75rem">
@@ -537,7 +518,6 @@ figcaption{
   <section class="band band--bone" id="quality">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">The standard</p>
         <h2>Our Commitment to Quality, Performance &amp; Authenticity</h2>
         <hr class="h-rule">
         <p class="lede">Every Revology is built to one published specification, using the same proven components and the same standardized process. Here is what that specification actually commits to.</p>
@@ -584,7 +564,6 @@ figcaption{
   <section class="band band--ink" id="team">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">The people</p>
         <h2>Automotive Expertise Behind Every Revology Mustang</h2>
         <hr class="h-rule">
         <p class="lede">170 people build these cars in Orlando, led by a team whose OEM experience runs through Ford, Nissan, Honda and General Motors.</p>
@@ -652,7 +631,6 @@ figcaption{
   <section class="band band--ink3" id="location">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Orlando, Florida</p>
         <h2>See Where Your Revology Is Built</h2>
         <hr class="h-rule">
       </div>
@@ -706,7 +684,6 @@ figcaption{
     <div class="wrap">
       <div class="cta__in">
         <div>
-          <p class="eyebrow">Start the build</p>
           <h2>Build Your Revology</h2>
           <hr class="h-rule">
           <p class="lede">Ten models. One specification. Roughly 28 to 32 weeks from signed order to the keys in your hand.</p>
