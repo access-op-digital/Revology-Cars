@@ -43,7 +43,7 @@ One H1 and seven H2s, matching the agreed outline:
 5. `H2` Our Commitment to Quality, Performance & Authenticity
 6. `H2` The Team Behind Every Revology Mustang
 7. `H2` See Where Your Revology Is Built
-8. `H2` Build Your Revology
+8. `H2` Build Your Custom Revology Mustang
 
 ---
 
