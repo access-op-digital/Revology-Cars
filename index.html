@@ -100,12 +100,10 @@ h3{font-size:clamp(1.25rem,1.05rem + .7vw,1.7rem)}
 .btn--ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
 .band--bone .btn--ghost{border-color:rgba(21,21,21,.35);color:var(--ink)}
 .band--bone .btn--ghost:hover{border-color:var(--ink);background:rgba(21,21,21,.06)}
-.btn--white{background:var(--white);color:var(--ink);border-color:rgba(21,21,21,.1)}
-.btn--white:hover{background:var(--white);border-color:rgba(21,21,21,.3)}
 /* placeholder until the page it points at exists - not a link, so it
-   must not behave like one: no pointer, no hover shift */
+   must not behave like one: no pointer, and the hover lift is cancelled */
 .btn--pending{cursor:default}
-.btn--pending:hover{border-color:rgba(21,21,21,.1)}
+.btn--accent.btn--pending:hover{background:var(--accent)}
 .btn-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem}
 .btn-row--center{justify-content:center;margin-top:clamp(2.5rem,4vw,3.5rem)}
 
@@ -259,19 +257,21 @@ figcaption{
 .section-head h2{text-wrap:pretty}
 
 /* ---------- Founder letter ---------- */
-.letter{display:grid;grid-template-columns:1.18fr .82fr;gap:var(--gap);align-items:stretch}
+.letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
 /* the portrait takes up whatever height the copy column has spare,
    so the quote closes the column instead of leaving a hole under it */
-.letter__aside{display:flex;flex-direction:column;gap:2.25rem}
+.letter__aside{display:flex;flex-direction:column;gap:1.5rem}
 /* the column gap already supplies the spacing above the button */
 .letter__aside .btn-row{margin-top:0}
 .letter__aside figure{display:flex;flex-direction:column;flex:1}
 .letter__aside .media-frame{flex:1;aspect-ratio:auto;min-height:19rem}
+/* smaller and across a wider measure than before, so it sets in fewer,
+   shorter lines and hands the height back to the portrait above it */
 .pull{
-  font-family:var(--f-display);font-weight:700;line-height:1.18;
-  font-size:clamp(1.25rem,1.05rem + .8vw,1.75rem);
-  color:var(--ink);margin:0;padding-left:1.4rem;border-left:3px solid var(--accent);
-  max-width:32ch;text-wrap:pretty;
+  font-family:var(--f-display);font-weight:700;line-height:1.24;
+  font-size:clamp(1.05rem,.95rem + .45vw,1.32rem);
+  color:var(--ink);margin:0;padding-left:1.2rem;border-left:3px solid var(--accent);
+  max-width:46ch;text-wrap:pretty;
 }
 @media (max-width:900px){
   .letter{grid-template-columns:1fr}
@@ -546,7 +546,7 @@ figcaption{
                To activate: swap the span for an anchor with the page URL
                and drop the btn--pending class. -->
           <div class="btn-row">
-            <span class="btn btn--white btn--pending">Meet Tom Scarpello</span>
+            <span class="btn btn--accent btn--pending">Meet Tom Scarpello</span>
           </div>
         </div>
 
