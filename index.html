@@ -100,6 +100,12 @@ h3{font-size:clamp(1.25rem,1.05rem + .7vw,1.7rem)}
 .btn--ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
 .band--bone .btn--ghost{border-color:rgba(21,21,21,.35);color:var(--ink)}
 .band--bone .btn--ghost:hover{border-color:var(--ink);background:rgba(21,21,21,.06)}
+.btn--white{background:var(--white);color:var(--ink);border-color:rgba(21,21,21,.1)}
+.btn--white:hover{background:var(--white);border-color:rgba(21,21,21,.3)}
+/* placeholder until the page it points at exists - not a link, so it
+   must not behave like one: no pointer, no hover shift */
+.btn--pending{cursor:default}
+.btn--pending:hover{border-color:rgba(21,21,21,.1)}
 .btn-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem}
 .btn-row--center{justify-content:center;margin-top:clamp(2.5rem,4vw,3.5rem)}
 
@@ -237,7 +243,6 @@ figcaption{
   font-family:var(--f-display);font-weight:700;line-height:1;color:var(--white);
   font-size:clamp(1.65rem,1.2rem + 1.4vw,2.5rem);font-variant-numeric:tabular-nums;
 }
-.fig__n span{color:var(--accent)}
 .fig__l{font-family:var(--f-label);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mute-on-dark);margin-top:.65rem;line-height:1.55}
 @media (max-width:1000px){.figures__grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.figures__grid{grid-template-columns:repeat(2,1fr)}}
@@ -254,10 +259,12 @@ figcaption{
 .section-head h2{text-wrap:pretty}
 
 /* ---------- Founder letter ---------- */
-.letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
+.letter{display:grid;grid-template-columns:1.18fr .82fr;gap:var(--gap);align-items:stretch}
 /* the portrait takes up whatever height the copy column has spare,
    so the quote closes the column instead of leaving a hole under it */
 .letter__aside{display:flex;flex-direction:column;gap:2.25rem}
+/* the column gap already supplies the spacing above the button */
+.letter__aside .btn-row{margin-top:0}
 .letter__aside figure{display:flex;flex-direction:column;flex:1}
 .letter__aside .media-frame{flex:1;aspect-ratio:auto;min-height:19rem}
 .pull{
@@ -534,6 +541,13 @@ figcaption{
             </figcaption>
           </figure>
           <blockquote class="pull">&ldquo;This is my life&rsquo;s work. Everything I have learned in almost 35 years in the automotive industry, rolled up into one very special line of products.&rdquo;</blockquote>
+
+          <!-- No founder page live yet, so this is deliberately not a link.
+               To activate: swap the span for an anchor with the page URL
+               and drop the btn--pending class. -->
+          <div class="btn-row">
+            <span class="btn btn--white btn--pending">Meet Tom Scarpello</span>
+          </div>
         </div>
 
         <div class="body">
@@ -577,7 +591,7 @@ figcaption{
             <p>Revology reached ten years of production. Revology completed its 200th car in February 2024. Building the first 100 cars took Revology eight years. Building the next 100 cars took Revology two years.</p>
           </div>
           <div class="tl">
-            <div class="tl__yr">November 2025</div>
+            <div class="tl__yr">2025</div>
             <h3 class="tl__t">Boss 429 world debut</h3>
             <p>Revology unveiled the 1969 Mustang Boss 429. The unveiling took place at the Los Angeles Auto Show. Revology had delivered 324 cars by this point. Those cars reached customers in the United States and 19 other countries.</p>
           </div>
@@ -646,7 +660,7 @@ figcaption{
         <div class="fig__l">Operations begin<br>in Orlando</div>
       </div>
       <div>
-        <div class="fig__n">1<span>st</span></div>
+        <div class="fig__n">1st</div>
         <div class="fig__l">Company ever<br>licensed by Ford</div>
       </div>
       <div>
