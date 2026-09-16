@@ -243,9 +243,11 @@ figcaption{
 @media (max-width:520px){.figures__grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- Section heads ---------- */
-.section-head{max-width:66ch;margin-bottom:clamp(2.5rem,5vw,4rem)}
-/* runs the head and its lede edge to edge instead of capping the measure */
-.section-head--full,.section-head--full .lede{max-width:none}
+/* section heads run edge to edge - no capped measure, no gap on the right.
+   H2s inside the two-column manufacturing and build blocks keep their
+   column width, since the layout there is the point. */
+.section-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-head .lede{max-width:none}
 
 /* ---------- Founder letter ---------- */
 .letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
@@ -529,7 +531,7 @@ figcaption{
   <!-- ==================== RE-ENGINEERING ==================== -->
   <section class="band band--ink" id="engineering">
     <div class="wrap">
-      <div class="section-head section-head--full">
+      <div class="section-head">
         <h2>Re-Engineering Classic Mustangs With Modern Technology</h2>
         <hr class="h-rule">
         <p class="lede">Every Revology vehicle is developed from a dedicated vehicle platform rather than created as a one-off modification. Revology Cars engineers each platform to support the integration of modern automotive systems and components, creating reproduction Mustang and Shelby GT vehicles that are designed as complete automobiles. This platform-based approach enables consistency, continuous refinement, and the integration of classic Mustang design with modern engineering.</p>
