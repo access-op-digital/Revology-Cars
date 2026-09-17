@@ -3,11 +3,11 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/company", "destination": "/index.html" },
-    { "source": "/about", "destination": "/about-us.html" },
-    { "source": "/author/tom-scarpello", "destination": "/tom-scarpello.html" },
-    { "source": "/author", "destination": "/tom-scarpello.html" },
-    { "source": "/meet-the-founder", "destination": "/tom-scarpello.html" }
+    { "source": "/company", "destination": "/" },
+    { "source": "/about", "destination": "/about-us" },
+    { "source": "/author/tom-scarpello", "destination": "/tom-scarpello" },
+    { "source": "/author", "destination": "/tom-scarpello" },
+    { "source": "/meet-the-founder", "destination": "/tom-scarpello" }
   ],
   "headers": [
     {
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "source": "/(.*).html",
+      "source": "/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
