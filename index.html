@@ -100,10 +100,6 @@ h3{font-size:clamp(1.25rem,1.05rem + .7vw,1.7rem)}
 .btn--ghost:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
 .band--bone .btn--ghost{border-color:rgba(21,21,21,.35);color:var(--ink)}
 .band--bone .btn--ghost:hover{border-color:var(--ink);background:rgba(21,21,21,.06)}
-/* placeholder until the page it points at exists - not a link, so it
-   must not behave like one: no pointer, and the hover lift is cancelled */
-.btn--pending{cursor:default}
-.btn--accent.btn--pending:hover{background:var(--accent)}
 .btn-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem}
 .btn-row--center{justify-content:center;margin-top:clamp(2.5rem,4vw,3.5rem)}
 
@@ -465,8 +461,8 @@ figcaption{
 
     <div class="nav-group nav-group--right">
       <nav class="nav-links" aria-label="Company">
-        <a href="https://revologycars.com/about-us/" aria-current="page">About Us</a>
-        <a href="https://revologycars.com/testimonials/">Testimonials</a>
+        <a href="/about-us" aria-current="page">About Us</a>
+        <a href="/testimonials">Testimonials</a>
       </nav>
       <a class="nav-cta" href="https://revologycars.com/contact-us/">Contact Us</a>
       <button class="nav-search" type="button" id="searchToggle" aria-expanded="false" aria-controls="navFind" aria-label="Search">
@@ -490,9 +486,11 @@ figcaption{
     <a href="https://revologycars.com/#models">Models</a>
     <a href="https://revologycars.com/inventory/">Inventory</a>
     <a href="https://revologycars.com/registry/">Registry</a>
-    <a href="https://revologycars.com/about-us/" aria-current="page">About Us</a>
+    <a href="/company">Company Hub</a>
+    <a href="/about-us" aria-current="page">About Us</a>
+    <a href="/author/tom-scarpello">Tom Scarpello, Founder</a>
     <a href="https://revologycars.com/meet-the-team/">Management Team</a>
-    <a href="https://revologycars.com/testimonials/">Testimonials</a>
+    <a href="/testimonials">Testimonials</a>
     <a href="https://revologycars.com/how-to-order/">How to Order</a>
     <a href="https://revologycars.com/careers/">Careers</a>
     <a href="https://revologycars.com/faq/">FAQ</a>
@@ -542,11 +540,8 @@ figcaption{
           </figure>
           <blockquote class="pull">&ldquo;This is my life&rsquo;s work. Everything I have learned in almost 35 years in the automotive industry, rolled up into one very special line of products.&rdquo;</blockquote>
 
-          <!-- No founder page live yet, so this is deliberately not a link.
-               To activate: swap the span for an anchor with the page URL
-               and drop the btn--pending class. -->
           <div class="btn-row">
-            <span class="btn btn--accent btn--pending">Meet the Founder</span>
+            <a class="btn btn--accent" href="/author/tom-scarpello">Meet the Founder</a>
           </div>
         </div>
 
@@ -926,11 +921,12 @@ figcaption{
         <img src="https://revologycars.com/wp-content/uploads/2024/04/revolog-logo-white.svg" alt="Revology Cars" width="130" height="22">
       </a>
       <nav class="foot-links" aria-label="Footer">
+        <a href="/company">Company Hub</a>
+        <a href="/about-us">About Us</a>
+        <a href="/author/tom-scarpello">Tom Scarpello</a>
+        <a href="/testimonials">Testimonials</a>
         <a href="https://revologycars.com/inventory/">Inventory</a>
         <a href="https://revologycars.com/how-to-order/">How to Order</a>
-        <a href="https://revologycars.com/meet-the-team/">Management Team</a>
-        <a href="https://revologycars.com/careers/">Careers</a>
-        <a href="https://revologycars.com/faq/">FAQ</a>
         <a href="https://revologycars.com/contact-us/">Contact</a>
       </nav>
       <p>2252 Commerce Park Drive, Suite 350 &middot; Orlando, FL 32819 &middot; <a href="tel:+18009744463">+1 (800) 974-4463</a></p>
@@ -958,7 +954,13 @@ figcaption{
       "url": "https://revologycars.com/",
       "logo": "https://revologycars.com/wp-content/uploads/2021/05/logo_squared.jpg",
       "foundingDate": "2014",
-      "founder": { "@type": "Person", "name": "Tom Scarpello", "jobTitle": "Founder & CEO" },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://revologycars.com/author/tom-scarpello/#person",
+        "name": "Tom Scarpello",
+        "jobTitle": "Founder & CEO",
+        "url": "https://revologycars.com/author/tom-scarpello/"
+      },
       "numberOfEmployees": { "@type": "QuantitativeValue", "value": 170 },
       "telephone": "+1-800-974-4463",
       "email": "info@revologycars.com",
