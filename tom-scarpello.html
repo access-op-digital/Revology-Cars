@@ -10,7 +10,7 @@
 <meta property="og:title" content="Tom Scarpello: Founder &amp; CEO, Revology Cars">
 <meta property="og:description" content="Seventeen years at Ford, six of them running the Special Vehicle Team, then Revology Cars in 2014. The career behind the re-engineered Mustang.">
 <meta property="og:url" content="https://revologycars.com/author/tom-scarpello/">
-<meta property="og:image" content="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg">
+<meta property="og:image" content="https://revologycars.com/wp-content/uploads/2025/06/dr1a4085-2.jpeg">
 <meta property="profile:first_name" content="Tom">
 <meta property="profile:last_name" content="Scarpello">
 <meta name="twitter:card" content="summary_large_image">
@@ -243,71 +243,173 @@ figcaption{
 /* ---------- Author hero ---------- */
 /* Portrait beside the name rather than behind it: this page is about a
    person, and a scrim over a face is a worse photograph than no scrim. */
-.ahero{background:#0D0D0D;border-bottom:1px solid var(--rule-dark)}
+/* A compact identity band: square portrait, name, role, the places to find
+   him. Everything that used to sit here - the lede, the subject tags - has
+   moved to the section that actually evidences it. */
+/* A car behind the band rather than flat black - kept faint, and washed
+   down further on the left where the name and the role sit. Car #347, a
+   gunmetal fastback: the roofline still reads at this opacity where a
+   motion shot would turn to mush, and the muted grey leaves the orange
+   accent alone. Not used on any other page. */
+.ahero{position:relative;overflow:hidden;background:#0D0D0D;border-bottom:1px solid var(--rule-dark)}
+.ahero__bg{position:absolute;inset:0}
+.ahero__bg img{width:100%;height:100%;object-fit:cover;object-position:58% 62%;opacity:.17}
+.ahero__scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,
+    rgba(13,13,13,.82) 0%,
+    rgba(13,13,13,.6) 46%,
+    rgba(13,13,13,.34) 78%,
+    rgba(13,13,13,.28) 100%);
+}
 .ahero__in{
-  display:grid;grid-template-columns:1.05fr 1fr;gap:var(--gap);align-items:center;
-  padding-block:clamp(3rem,6vw,5.5rem);
+  position:relative;
+  display:flex;align-items:center;gap:clamp(1.25rem,3.5vw,3rem);
+  padding-block:clamp(1.5rem,3vw,2.5rem);
 }
-@media (max-width:900px){.ahero__in{grid-template-columns:1fr}}
-.ahero__kicker{
-  font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--accent);margin:0 0 1.1rem;
+.ahero__portrait{
+  flex:0 0 auto;width:clamp(9rem,26vw,20rem);aspect-ratio:1;
+  border:1px solid rgba(255,255,255,.3);border-radius:18px;
+  overflow:hidden;background:var(--ink-3);
 }
-.ahero h1{font-size:clamp(2.4rem,1.5rem + 3.6vw,4.6rem)}
+/* the team-page portrait is already square, so no crop to fight */
+.ahero__portrait img{width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){
+  .ahero__in{flex-direction:column;align-items:flex-start}
+  .ahero__portrait{width:min(60vw,15rem)}
+}
+.ahero__id{min-width:0}
+.ahero h1{font-size:clamp(1.9rem,1.1rem + 3.4vw,4rem)}
 .h1-accent{color:var(--accent)}
 .ahero__role{
-  font-family:var(--f-label);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--white);margin:1.35rem 0 0;line-height:1.7;
+  font-family:var(--f-body);font-weight:700;text-transform:none;letter-spacing:0;
+  font-size:clamp(.95rem,.9rem + .25vw,1.2rem);
+  color:#D8D7D3;margin:.6rem 0 0;line-height:1.45;
 }
-.ahero .lede{color:#D8D7D3;max-width:56ch}
-.ahero__media .media-frame{aspect-ratio:4/3}
+.ahero__social{display:flex;gap:.55rem;list-style:none;margin:1.1rem 0 0;padding:0}
+.ahero__social a{
+  display:grid;place-items:center;width:2.15rem;height:2.15rem;
+  border:1px solid rgba(255,255,255,.3);border-radius:7px;color:var(--white);
+  transition:border-color .2s ease,color .2s ease,background .2s ease;
+}
+.ahero__social a:hover{border-color:var(--accent);color:var(--accent);background:rgba(236,85,22,.1)}
+.ahero__social svg{width:1.05rem;height:1.05rem;display:block}
+
 
 /* ---------- Bio ---------- */
-.bio{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--gap);align-items:start}
+/* the figures take only the width their labels need and sit hard right; the
+   prose takes everything that is left */
+/* The hero is a compact band, so the shared 7rem of section padding left a
+   gulf beneath it. Only the top is trimmed; the foot still needs its room
+   before the next band. */
+#bio{padding-block-start:clamp(1.75rem,3vw,2.75rem)}
+
+/* stretch, not start: the prose is the taller thing and so sets the row
+   height, and the boxes beside it divide that height between them, which is
+   what lands the last box's bottom edge level with the last line of text */
+.bio{display:grid;grid-template-columns:minmax(0,1fr) clamp(12rem,20vw,17rem);gap:var(--gap);align-items:stretch}
+/* .body caps at 62ch by default, which would leave the wider column half
+   empty - the column itself is the measure here */
+.bio .body{max-width:none}
+/* a step up from the 1.0625rem body default: this is the page's lead copy,
+   and the column is wide enough to carry it */
+.bio .body p{font-size:1.15rem;line-height:1.7;margin-bottom:1.15rem}
 @media (max-width:900px){.bio{grid-template-columns:1fr}}
-.pull{
-  font-family:var(--f-display);font-weight:700;line-height:1.24;
-  font-size:clamp(1.05rem,.95rem + .45vw,1.32rem);
-  color:var(--ink);margin:0;padding-left:1.2rem;border-left:3px solid var(--accent);
-  max-width:46ch;text-wrap:pretty;
-}
-.bio__card{border-top:2px solid var(--ink);padding-top:1.5rem}
-.bio__card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.85rem 1.5rem}
-.bio__card dt{
-  font-family:var(--f-label);font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--accent-ink);padding-top:.3rem;
-}
-.bio__card dd{margin:0;color:var(--ink);font-size:.95rem;line-height:1.6}
-.bio__card a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
-.bio__card a:hover{color:var(--accent-ink)}
 
-/* ---------- Career timeline ---------- */
-.career{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5rem 2rem}
-@media (max-width:1000px){.career{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.career{grid-template-columns:1fr}}
-.cl{padding-top:1.1rem;border-top:2px solid var(--accent)}
-.cl__yr{font-family:var(--f-label);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-variant-numeric:tabular-nums}
-.cl__t{font-size:1.1rem;line-height:1.08;margin:.6rem 0 .5rem;color:var(--white)}
-.cl p{margin:0;font-size:.95rem;line-height:1.62;color:var(--mute-on-dark)}
+/* the career in four numbers, each boxed so it carries its own weight beside
+   the prose that explains it. A definition list because that is what it is. */
+/* minmax so the four tracks share the column height evenly but can never be
+   squeezed below a readable box */
+.bfacts{margin:0;display:grid;gap:.7rem;height:100%;grid-auto-rows:minmax(5.75rem,1fr)}
+.bfacts > div{
+  display:flex;flex-direction:column;justify-content:space-between;
+  background:#FFFDF7;
+  border:1px solid var(--rule-bone);border-top:3px solid var(--accent);
+  box-shadow:0 2px 10px rgba(21,21,21,.05);
+  padding:1.15rem 1.2rem 1.25rem;
+}
+.bfacts dt{
+  font-family:var(--f-display);font-weight:700;line-height:.95;
+  font-size:clamp(2rem,1.5rem + 1.6vw,2.9rem);
+  color:var(--ink);font-variant-numeric:tabular-nums;
+}
+.bfacts dd{
+  margin:.55rem 0 0;padding-top:.55rem;border-top:1px solid var(--rule-bone);
+  font-family:var(--f-label);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent-ink);line-height:1.65;
+}
+/* two across once the column drops under the prose: nothing left to align
+   to, so the boxes go back to their natural height */
+@media (max-width:900px){
+  .bfacts{grid-template-columns:1fr 1fr;grid-auto-rows:auto;height:auto;gap:.7rem;margin-top:2.5rem}
+}
+@media (max-width:480px){.bfacts{grid-template-columns:1fr}}
 
-/* ---------- Expertise sheet ---------- */
-.sheet{border-top:2px solid var(--ink);margin-top:clamp(2rem,4vw,3rem)}
-.sheet__row{
-  display:grid;grid-template-columns:minmax(11rem,.34fr) 1fr;gap:1rem 2.5rem;
-  padding:1.6rem 0;border-bottom:1px solid var(--rule-bone);align-items:start;
+/* ---------- Career tiles ---------- */
+/* Four across in one row, each a raised panel on the dark band rather than a
+   bare column. Padding and type are sized to what a quarter-width tile can
+   actually hold - these entries run 45 to 60 words. */
+.career{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.9rem,1.6vw,1.25rem)}
+@media (max-width:1080px){.career{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.career{grid-template-columns:1fr}}
+.cl{
+  background:var(--ink-3);
+  border:1px solid var(--rule-dark);border-top:3px solid var(--accent);
+  padding:clamp(1.1rem,1.5vw,1.45rem);
 }
-@media (max-width:700px){.sheet__row{grid-template-columns:1fr;gap:.5rem}}
-.sheet__k{
-  font-family:var(--f-label);font-size:clamp(.8rem,.72rem + .3vw,.98rem);
-  letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);line-height:1.3;
-  padding-top:.22rem;
+.cl__t{font-size:clamp(1.05rem,.95rem + .35vw,1.25rem);line-height:1.12;margin:0 0 .75rem;color:var(--white)}
+.cl p{margin:0;font-size:.95rem;line-height:1.64;color:#C4C3BF}
+
+/* ---------- Expertise cards ---------- */
+/* Three across, so the six subjects make two even rows. Cards rather than
+   the label-and-paragraph rows this replaces: each subject now carries a
+   full explanation, which reads better boxed than run across a wide row. */
+.ecards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(1rem,1.8vw,1.5rem);margin-top:clamp(2rem,4vw,3rem);
 }
-.sheet__v{margin:0;color:var(--mute-on-bone);max-width:66ch}
+@media (max-width:980px){.ecards{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.ecards{grid-template-columns:1fr}}
+.ecard{
+  background:#FFFDF7;
+  border:1px solid var(--rule-bone);border-top:3px solid var(--accent);
+  box-shadow:0 2px 10px rgba(21,21,21,.05);
+  /* trimmed from 1.6rem to buy the headings the width they need */
+  padding:clamp(1.1rem,1.7vw,1.35rem);
+}
+/* Akhand Bold rather than the small label face, so it still reads bold.
+   The size is capped by the longest label: "Product Planning, Marketing &
+   Sales" and "Classic Mustang & Shelby GT Heritage" are both 35 characters,
+   and a third-width card holds about that many at this size. Bigger than
+   this and they wrap onto a second line. */
+.ecard h3{
+  font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:0;
+  font-size:clamp(.8rem,.7rem + .34vw,.95rem);line-height:1.1;
+  color:var(--ink);margin:0 0 .85rem;
+  padding-bottom:.85rem;border-bottom:1px solid var(--rule-bone);
+}
+/* two-up and single-column cards are far wider, so the headings can have
+   the bigger size back there */
+@media (max-width:980px){
+  .ecard h3{font-size:clamp(1rem,.9rem + .4vw,1.3rem)}
+}
+.ecard p{margin:0;font-size:.97rem;line-height:1.66;color:var(--mute-on-bone)}
 
 /* ---------- Words + film ---------- */
-.words{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:start}
+.words{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.75rem,3.5vw,3rem);align-items:stretch}
+/* flex-start, not center: centring left a band of empty space above the
+   player. The film now starts level with the first quote, and any slack
+   falls below it where it does not read as a gap in the layout. */
+.words__media{display:flex;align-items:flex-start}
+.words__media .video{width:100%}
 @media (max-width:900px){.words{grid-template-columns:1fr}}
-.qlist{margin:0;padding:0;list-style:none;display:grid;gap:2rem}
+/* the heading sits inside the left column, so the film starts level with it
+   rather than below the whole section head */
+.words__copy .section-head{margin-bottom:clamp(1.5rem,2.5vw,2.25rem)}
+/* start, not space-between: spreading the quotes to meet the film's bottom
+   edge opened a gap between them instead. Both columns now begin at the top
+   of the row and simply end where their content ends. */
+.qlist{margin:0;padding:0;list-style:none;display:grid;gap:1.75rem;align-content:start}
 .qlist blockquote{
   margin:0;font-family:var(--f-display);font-weight:700;text-transform:none;
   font-size:clamp(1.15rem,1rem + .7vw,1.55rem);line-height:1.22;color:var(--white);
@@ -320,27 +422,41 @@ figcaption{
 }
 
 /* ---------- Press list ---------- */
-.press{list-style:none;margin:0;padding:0;border-top:2px solid var(--accent)}
-.press li{border-bottom:1px solid var(--rule-bone)}
-.press a{
-  display:grid;grid-template-columns:minmax(12rem,.28fr) 1fr;gap:.4rem 2.5rem;
-  padding:1.5rem 0;text-decoration:none;align-items:baseline;
-}
-@media (max-width:700px){.press a{grid-template-columns:1fr;gap:.35rem}}
-.press__pub{font-family:var(--f-label);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-ink);line-height:1.6}
-.press__t{color:var(--ink);font-size:1.02rem;line-height:1.5}
-.press a:hover .press__t{color:var(--accent-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-.press__note{margin:1.75rem 0 0;font-size:.88rem;line-height:1.7;color:var(--mute-on-bone);max-width:70ch}
-.film__note{margin:1.25rem 0 0;font-size:.88rem;line-height:1.7;color:var(--mute-on-dark);max-width:62ch}
+/* the closing banner now follows the bone Interviews section directly, so
+   it needs a rule to read as its own band */
+.final.band--bone{border-top:1px solid var(--rule-bone)}
 
-/* ---------- Cross-links ---------- */
-.xlinks{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2rem,4vw,3rem)}
-@media (max-width:860px){.xlinks{grid-template-columns:1fr}}
-.xlink{display:block;text-decoration:none;padding-top:1.15rem;border-top:2px solid var(--accent)}
-.xlink__k{font-family:var(--f-label);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
-.xlink h3{font-size:1.25rem;line-height:1.08;margin:.6rem 0 .5rem;color:var(--white)}
-.xlink p{margin:0;font-size:.95rem;line-height:1.62;color:var(--mute-on-dark)}
-.xlink:hover h3{color:var(--accent)}
+/* ---------- Press log ---------- */
+/* Outlet first, at display size: on a page about authority the masthead is
+   the signal, so it leads the row rather than sitting under the headline.
+   Full-width rows also stop the long podcast titles from wrapping five
+   deep, which is what they did in a third-width card. */
+.plog{border-top:2px solid var(--ink)}
+.plog__row{
+  display:grid;grid-template-columns:minmax(9rem,.26fr) 1fr;gap:.45rem clamp(1.5rem,3vw,2.75rem);
+  padding:clamp(1.15rem,2vw,1.5rem) 0;border-bottom:1px solid var(--rule-bone);
+  text-decoration:none;align-items:baseline;
+  transition:background .2s ease;
+}
+.plog__row:hover{background:rgba(21,21,21,.035)}
+.plog__pub{
+  font-family:var(--f-display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(.95rem,.85rem + .4vw,1.25rem);line-height:1.12;
+  color:var(--ink);text-wrap:balance;
+}
+.plog__title{display:block;font-size:1.05rem;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.plog__row:hover .plog__title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.plog__meta{
+  display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin-top:.6rem;
+  font-family:var(--f-label);font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent-ink);line-height:1.6;
+}
+.plog__meta span{transition:transform .2s ease}
+.plog__row:hover .plog__meta span{transform:translateX(3px)}
+@media (max-width:700px){.plog__row{grid-template-columns:1fr;gap:.35rem}}
+
+.press__note{margin:1.75rem 0 0;font-size:.88rem;line-height:1.7;color:var(--mute-on-bone);max-width:70ch}
+
 </style>
 </head>
 <body>
@@ -407,26 +523,40 @@ figcaption{
 
   <!-- ==================== HERO ==================== -->
   <section class="ahero">
+    <div class="ahero__bg">
+      <img src="https://revologycars.com/wp-content/uploads/2026/03/1968-revology-mustang-gt-fastback-cobra-jet-347-4.jpg"
+           alt="" width="1600" height="1067" aria-hidden="true">
+    </div>
+    <div class="ahero__scrim"></div>
     <div class="wrap ahero__in">
-      <div>
-        <p class="ahero__kicker">Founder &amp; CEO, Revology Cars</p>
-        <h1>Tom <span class="h1-accent">Scarpello</span></h1>
-        <p class="ahero__role">Seventeen years at Ford &middot; Ran the Special Vehicle Team, 1998&ndash;2004 &middot; Founded Revology in 2014</p>
-        <p class="lede">Tom Scarpello has spent his entire career in the automotive industry. He kept hearing the same question at auto shows &mdash; why doesn&rsquo;t Ford bring back the original Mustang? &mdash; and in 2014 he founded a company in Orlando to build the answer.</p>
-        <div class="btn-row">
-          <a class="btn btn--accent" href="#career">The Career</a>
-          <a class="btn btn--ghost" href="#press">Interviews</a>
-        </div>
+      <div class="ahero__portrait">
+        <img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4085-2-768x768.jpeg"
+             srcset="https://revologycars.com/wp-content/uploads/2025/06/dr1a4085-2-768x768.jpeg 768w,
+                     https://revologycars.com/wp-content/uploads/2025/06/dr1a4085-2.jpeg 2000w"
+             sizes="(max-width: 700px) 60vw, 26rem"
+             alt="Portrait of Tom Scarpello, founder and CEO of Revology Cars"
+             width="768" height="768" fetchpriority="high">
       </div>
-      <div class="ahero__media">
-        <figure>
-          <div class="media-frame">
-            <img src="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg"
-                 alt="Revology founder and CEO Tom Scarpello standing beside a blue Revology Mustang GT fastback on the coast"
-                 width="1080" height="608" fetchpriority="high">
-          </div>
-          <figcaption>Tom Scarpello, founder and CEO of Revology Cars, Orlando, Florida</figcaption>
-        </figure>
+      <div class="ahero__id">
+        <h1>Tom <span class="h1-accent">Scarpello</span></h1>
+        <p class="ahero__role">Founder &amp; CEO, Revology Cars</p>
+        <ul class="ahero__social" aria-label="Find Tom Scarpello">
+          <li>
+            <a href="https://www.linkedin.com/in/tom-scarpello-121a613/" rel="nofollow noopener" target="_blank"
+               aria-label="Tom Scarpello on LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.35 4.78 5.4V21h-4v-5.35c0-1.28-.02-2.92-1.9-2.92-1.9 0-2.2 1.38-2.2 2.82V21h-3.9z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://revologycars.com/contact-us/" aria-label="Contact Revology Cars" title="Contact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="m3.2 6.2 8.8 6.4 8.8-6.4"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -434,38 +564,31 @@ figcaption{
   <!-- ==================== BIO ==================== -->
   <section class="band band--bone" id="bio">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Who Tom Scarpello Is</h2>
-        <hr class="h-rule">
-      </div>
-
       <div class="bio">
         <div class="body">
-          <p>Tom Scarpello has spent his entire career in the automotive industry. His r&eacute;sum&eacute; covers manufacturing, marketing, sales and product planning for Ford and Nissan, in the United States and overseas. Seventeen of those years were at Ford, and from 1998 to 2004 he ran the Special Vehicle Team &mdash; the group that turned production Fords into factory performance cars. After Ford he held senior management roles at Jaguar, Nissan and Infiniti.</p>
-          <p>That sequence is the reason Revology exists in the form it does. Scarpello had spent two decades inside the process an automaker uses to develop a car: platform planning, system integration, validation, serviceability, continuous improvement. When he founded Revology in 2014, he applied that process to a 1960s Mustang instead of buying one and modifying it &mdash; because changing one system on a car changes the others, and only engineering at the platform level keeps performance, reliability, comfort and safety in balance.</p>
-          <p>He is the founder and CEO of the company, and the person whose standards the Orlando factory is set up to hold. Revology has designed and built reproduction 1967&ndash;1970 Mustangs and Shelby GTs there since 2014, and Scarpello remains the authority behind how the cars are specified, engineered and signed off.</p>
-          <p>Asked to name his favorite car, his answer is the same every time.</p>
-          <blockquote class="pull">&ldquo;The one we will build tomorrow.&rdquo;</blockquote>
+          <p>Tom is the founder and CEO of Revology Cars, and the person whose standards the Orlando factory is set up to hold. He has spent his entire career in the automotive industry, with a r&eacute;sum&eacute; covering manufacturing, marketing, sales and product planning for Ford and Nissan, in the United States and overseas.</p>
+          <p>Seventeen of those years were at Ford, starting on the plant floor as a production supervisor in 1988 and moving through research, media and strategic planning roles before leading marketing and sales for the Special Vehicle Team from 1998 to 2004, where he was product manager for the first Ford GT supercar. He went on to serve as vice president of marketing at Jaguar, then spent seven years with Nissan and Infiniti in roles spanning project leader, general manager, regional vice president and director, work that took him through California, Mexico, Hong Kong and Japan. He holds an MBA from Northwestern&rsquo;s Kellogg School of Management and a business degree from the University of Georgia.</p>
+          <p>Scarpello had spent over three decades inside the process an automaker uses to develop a car: platform planning, system integration, validation, serviceability, continuous improvement. When he founded Revology in 2014, he applied that process to a 1960s Mustang instead of buying one and modifying it. Today, Tom Scarpello continues to guide Revology Cars&rsquo; engineering philosophy, vehicle specifications, and manufacturing standards from the company&rsquo;s Orlando, Florida facility, where the team builds modern interpretations of iconic 1967&ndash;1970 Mustang models.</p>
         </div>
 
-        <div class="bio__card">
-          <dl>
-            <dt>Role</dt>
-            <dd>Founder &amp; CEO, Revology Cars LLC</dd>
-            <dt>Since</dt>
-            <dd>2014</dd>
-            <dt>Based</dt>
-            <dd>Orlando, Florida, USA</dd>
-            <dt>Before</dt>
-            <dd>Ford Motor Company (17 years), Jaguar, Nissan, Infiniti</dd>
-            <dt>Known for</dt>
-            <dd>Running Ford&rsquo;s Special Vehicle Team, 1998&ndash;2004</dd>
-            <dt>Profile</dt>
-            <dd><a href="https://www.linkedin.com/in/tom-scarpello-121a613/" rel="nofollow noopener" target="_blank">LinkedIn</a></dd>
-            <dt>Team</dt>
-            <dd><a href="https://revologycars.com/meet-the-team/">Revology management team</a></dd>
-          </dl>
-        </div>
+        <dl class="bfacts">
+          <div>
+            <dt>MBA</dt>
+            <dd>Kellogg School of Management, Northwestern</dd>
+          </div>
+          <div>
+            <dt>1988</dt>
+            <dd>Entered the industry on Ford&rsquo;s plant floor</dd>
+          </div>
+          <div>
+            <dt>17</dt>
+            <dd>Years at Ford Motor Company</dd>
+          </div>
+          <div>
+            <dt>2014</dt>
+            <dd>Founded Revology Cars in Orlando</dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
@@ -474,30 +597,26 @@ figcaption{
   <section class="band band--ink" id="career">
     <div class="wrap">
       <div class="section-head">
-        <h2>The Career Behind the Cars</h2>
+        <h2>From Ford Executive to Revology Founder</h2>
         <hr class="h-rule">
-        <p class="lede">Four stretches of one career in the automotive industry. Each one left something in the way a Revology is engineered.</p>
+        <p class="lede">Tom Scarpello&rsquo;s automotive career spans decades of leadership across vehicle development, performance programs, and global automotive operations. The experience gained at Ford, Jaguar, Nissan, and Infiniti shaped the engineering philosophy behind Revology Cars.</p>
       </div>
       <div class="career">
         <div class="cl">
-          <div class="cl__yr">17 years</div>
           <h3 class="cl__t">Ford Motor Company</h3>
-          <p>Tom&rsquo;s r&eacute;sum&eacute; covers manufacturing, marketing, sales and product planning for Ford, in the United States and overseas. Seventeen of his years in the industry were spent inside the company that built the car he would later rebuild.</p>
+          <p>Tom began his automotive career at Ford Motor Company on the plant floor as a production supervisor in 1988. After earning his MBA, he returned to Ford and held roles across research, strategic planning, marketing, and product development, including SVT Marketing and Sales Manager. Two of those years were spent at Ford M&eacute;xico as marketing manager.</p>
         </div>
         <div class="cl">
-          <div class="cl__yr">1998 &ndash; 2004</div>
           <h3 class="cl__t">Ford Special Vehicle Team</h3>
-          <p>For six years he ran SVT, the group responsible for Ford&rsquo;s factory performance cars. It is the part of the r&eacute;sum&eacute; that matters most to a Revology: SVT existed to take a production platform and re-engineer it as a complete, integrated performance vehicle.</p>
+          <p>For six years he led marketing and sales for SVT, the group responsible for Ford&rsquo;s factory performance cars, and served as product manager for the first Ford GT supercar. It is the part of the r&eacute;sum&eacute; that matters most to a Revology: SVT existed to take a production platform and re-engineer it as a complete, integrated performance vehicle.</p>
         </div>
         <div class="cl">
-          <div class="cl__yr">After Ford</div>
           <h3 class="cl__t">Jaguar, Nissan and Infiniti</h3>
-          <p>Senior management roles across three more marques, including product planning and sales work for Nissan in the U.S. and abroad &mdash; a second pass through the same disciplines from outside Dearborn.</p>
+          <p>Tom continued his automotive career as vice president of marketing at Jaguar, then general manager of commercial trucks at Tuttle-Click, founded his own venture in Mexico, then spent seven years with Nissan and Infiniti as project leader, general manager, regional vice president and director. The work took him through California, Mexico, Hong Kong and Japan.</p>
         </div>
         <div class="cl">
-          <div class="cl__yr">2014</div>
           <h3 class="cl__t">Revology Cars founded</h3>
-          <p>He founded Revology in Orlando, Florida to answer the question he kept hearing at auto shows: why doesn&rsquo;t Ford bring back the original Mustang? The company has designed and built reproduction Mustangs and Shelby GTs there ever since.</p>
+          <p>He founded Revology in Orlando, Florida, applying the platform-based development process he had spent decades inside to a 1960s Mustang instead of buying one and modifying it. The company has designed and built reproduction 1967&ndash;1970 Mustangs and Shelby GTs there ever since, for owners in twenty countries across four continents.</p>
         </div>
       </div>
     </div>
@@ -507,35 +626,35 @@ figcaption{
   <section class="band band--bone" id="expertise">
     <div class="wrap">
       <div class="section-head">
-        <h2>What He Knows</h2>
+        <h2>Skills and Expertise Behind Tom&rsquo;s Vision</h2>
         <hr class="h-rule">
-        <p class="lede">The subjects Tom Scarpello speaks and writes on, and the experience each one rests on.</p>
+        <p class="lede">Tom Scarpello is the architect of Revology&rsquo;s OEM-style approach to building reproduction classic cars: developing a 1960s Mustang as a complete modern vehicle through platform development, system integration, and manufacturing at specialty volumes, applying the automaker process he worked inside for seventeen years.</p>
       </div>
-      <div class="sheet">
-        <div class="sheet__row">
-          <div class="sheet__k">Reproduction vehicle engineering</div>
-          <p class="sheet__v">Developing 1967&ndash;1970 Mustang and Shelby GT vehicles from an engineered platform rather than as one-off modifications, so modern systems integrate instead of merely fitting.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">OEM product development</div>
-          <p class="sheet__v">Applying the automaker process he worked inside for seventeen years &mdash; platform planning, system integration, serviceability, continuous improvement &mdash; at specialty-manufacturer volumes.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Performance vehicle programs</div>
-          <p class="sheet__v">Six years running Ford&rsquo;s Special Vehicle Team, the division that turned production Fords into factory performance cars.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Low-volume manufacturing</div>
-          <p class="sheet__v">Building a 65,757 sq ft Orlando factory that brings engineering, body fabrication, paint, trim, final assembly and quality validation under one roof.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Product planning, marketing and sales</div>
-          <p class="sheet__v">Roles spanning all three disciplines at Ford and Nissan, in the United States and overseas.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Classic Mustang and Shelby GT design heritage</div>
-          <p class="sheet__v">The styling, character and detail of the original 1960s cars, and which of it has to survive re-engineering for the car to still read as a Mustang.</p>
-        </div>
+      <div class="ecards">
+        <article class="ecard">
+          <h3>Reproduction Vehicle Engineering</h3>
+          <p>Tom applies a platform-based approach to developing 1967&ndash;1970 Mustang and Shelby GT vehicles. Instead of creating one-off modifications, he focuses on integrating modern systems and components into a complete, engineered automobile.</p>
+        </article>
+        <article class="ecard">
+          <h3>OEM Product Development</h3>
+          <p>Tom brings experience from inside major automotive organizations, applying principles such as platform planning, system integration, validation, serviceability, and continuous improvement to the development of specialty vehicles.</p>
+        </article>
+        <article class="ecard">
+          <h3>Performance Vehicle Programs</h3>
+          <p>Tom&rsquo;s experience with Ford&rsquo;s Special Vehicle Team included leading marketing and sales for factory performance vehicles and serving as product manager for the first Ford GT, connecting engineering, performance, and product strategy.</p>
+        </article>
+        <article class="ecard">
+          <h3>Low-Volume Manufacturing</h3>
+          <p>Tom helped establish Revology&rsquo;s Orlando manufacturing facility, where engineering, body fabrication, paint, trim, final assembly, and quality validation are integrated into a complete vehicle production process.</p>
+        </article>
+        <article class="ecard">
+          <h3>Product Planning, Marketing &amp; Sales</h3>
+          <p>Tom&rsquo;s career includes leadership roles across product planning, marketing, and sales at Ford and Nissan. His experience spans U.S. and international automotive markets, combining business strategy with vehicle development.</p>
+        </article>
+        <article class="ecard">
+          <h3>Classic Mustang &amp; Shelby GT Heritage</h3>
+          <p>Tom understands the design details that define classic Mustang and Shelby GT vehicles. His approach preserves the styling, character, and heritage of these iconic models while adapting them with modern engineering and technology.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -543,29 +662,32 @@ figcaption{
   <!-- ==================== IN HIS OWN WORDS ==================== -->
   <section class="band band--ink3" id="words">
     <div class="wrap">
-      <div class="section-head">
-        <h2>In His Own Words</h2>
-        <hr class="h-rule">
-      </div>
       <div class="words">
-        <ul class="qlist">
-          <li>
-            <blockquote>&ldquo;This is my life&rsquo;s work. Everything I have learned in almost 35 years in the automotive industry, rolled up into one very special line of products.&rdquo;</blockquote>
-            <cite>Tom Scarpello, on the Revology line</cite>
-          </li>
-          <li>
-            <blockquote>&ldquo;The one we will build tomorrow.&rdquo;</blockquote>
-            <cite>Tom Scarpello, asked to name his favorite car</cite>
-          </li>
-        </ul>
-        <div>
+        <div class="words__copy">
+          <div class="section-head">
+            <h2>In His Own Words</h2>
+            <hr class="h-rule">
+          </div>
+          <ul class="qlist">
+            <li>
+              <blockquote>&ldquo;This is my life&rsquo;s work. Everything I have learned in almost 35 years in the automotive industry, rolled up into one very special line of products.&rdquo;</blockquote>
+              <cite>Tom Scarpello, on the Revology line</cite>
+            </li>
+            <li>
+              <blockquote>&ldquo;The one we will build tomorrow.&rdquo;</blockquote>
+              <cite>Tom Scarpello, asked to name his favorite car</cite>
+            </li>
+          </ul>
+        </div>
+        <div class="words__media">
+          <!-- Revology's own channel. Title and channel read from YouTube's
+               oEmbed endpoint; the watch and embed pages both return 200. -->
           <div class="video">
-            <iframe src="https://www.youtube.com/embed/xlStTBAeTyA?rel=0"
-                    title="Revology Cars celebrates its tenth year anniversary"
+            <iframe src="https://www.youtube.com/embed/XRidHqSlW8E?rel=0"
+                    title="Mustang Boss 429 by Revology: Ep. 01 &mdash; Reimagining a legend"
                     loading="lazy" allowfullscreen
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </div>
-          <p class="film__note">Revology Cars marks ten years of production &mdash; the decade between the question Scarpello kept being asked at auto shows and a factory building the answer.</p>
         </div>
       </div>
     </div>
@@ -579,82 +701,58 @@ figcaption{
         <hr class="h-rule">
         <p class="lede">Published conversations with Tom Scarpello, on the record, at their original sources.</p>
       </div>
-      <ul class="press">
-        <li>
-          <a href="https://www.detroitnews.com/story/business/autos/2023/06/24/payne-revology-mustang-startup-goes-back-to-the-future/70346156007/" rel="noopener" target="_blank">
-            <span class="press__pub">The Detroit News &middot; 24 June 2023</span>
-            <span class="press__t">Payne: Revology Mustang startup goes back to the future</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=350A4eAXrIk" rel="noopener" target="_blank">
-            <span class="press__pub">Cars and Culture with Jason Stein</span>
-            <span class="press__t">CEO of Revology, Tom Scarpello &mdash; Cars and Culture Episode #131</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://themusclecarplace.com/podcast/tmcp-572-tom-scarpello-of-revology-cars-bringing-new-oem-quality-65-68-mustangs-into-the-21st-century/" rel="noopener" target="_blank">
-            <span class="press__pub">The Muscle Car Place</span>
-            <span class="press__t">TMCP #572: Tom Scarpello of Revology Cars &mdash; Bringing New &ldquo;OEM&rdquo; Quality &rsquo;65&ndash;&rsquo;68 Mustangs into the 21st Century</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://themusclecarplace.com/the-muscle-car-place-podcast/tmcp-363-tom-scarpello-of-revology-producing-brand-new-officially-licensed-oem-caliber-1960s-mustangs-and-shelbys/" rel="noopener" target="_blank">
-            <span class="press__pub">The Muscle Car Place</span>
-            <span class="press__t">TMCP #363: Tom Scarpello of Revology &mdash; Producing Brand New, Officially Licensed, OEM Caliber 1960&rsquo;s Mustangs and Shelbys</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=2ggp6wtnBb0" rel="noopener" target="_blank">
-            <span class="press__pub">Autorestomod</span>
-            <span class="press__t">Revology New Classic Convertible Mustang: Interview With Tom Scarpello, Episode 214</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://creators.spotify.com/pod/profile/mustangownerspodcast/episodes/Tom-Scarpello---Founder---Revology-Cars-e235kp8" rel="noopener" target="_blank">
-            <span class="press__pub">Mustang Owner&rsquo;s Podcast</span>
-            <span class="press__t">Tom Scarpello &mdash; Founder &mdash; Revology Cars</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=S9T3Ukq7Ri4" rel="noopener" target="_blank">
-            <span class="press__pub">American Dream Machines</span>
-            <span class="press__t">Revology, my personal interview with Tom Scarpello</span>
-          </a>
-        </li>
-      </ul>
+      <div class="plog">
+        <a class="plog__row" href="https://www.detroitnews.com/story/business/autos/2023/06/24/payne-revology-mustang-startup-goes-back-to-the-future/70346156007/" rel="noopener" target="_blank">
+          <span class="plog__pub">The Detroit News</span>
+          <span>
+            <span class="plog__title">Payne: Revology Mustang startup goes back to the future</span>
+            <span class="plog__meta">Print &middot; 24 June 2023 &middot; Read the article <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+        <a class="plog__row" href="https://www.youtube.com/watch?v=350A4eAXrIk" rel="noopener" target="_blank">
+          <span class="plog__pub">Cars and Culture with Jason Stein</span>
+          <span>
+            <span class="plog__title">CEO of Revology, Tom Scarpello &mdash; Cars and Culture Episode #131</span>
+            <span class="plog__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+        <a class="plog__row" href="https://themusclecarplace.com/podcast/tmcp-572-tom-scarpello-of-revology-cars-bringing-new-oem-quality-65-68-mustangs-into-the-21st-century/" rel="noopener" target="_blank">
+          <span class="plog__pub">The Muscle Car Place</span>
+          <span>
+            <span class="plog__title">TMCP #572: Tom Scarpello of Revology Cars &mdash; Bringing New &ldquo;OEM&rdquo; Quality &rsquo;65&ndash;&rsquo;68 Mustangs into the 21st Century</span>
+            <span class="plog__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+        <a class="plog__row" href="https://themusclecarplace.com/the-muscle-car-place-podcast/tmcp-363-tom-scarpello-of-revology-producing-brand-new-officially-licensed-oem-caliber-1960s-mustangs-and-shelbys/" rel="noopener" target="_blank">
+          <span class="plog__pub">The Muscle Car Place</span>
+          <span>
+            <span class="plog__title">TMCP #363: Tom Scarpello of Revology &mdash; Producing Brand New, Officially Licensed, OEM Caliber 1960&rsquo;s Mustangs and Shelbys</span>
+            <span class="plog__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+        <a class="plog__row" href="https://www.youtube.com/watch?v=2ggp6wtnBb0" rel="noopener" target="_blank">
+          <span class="plog__pub">Autorestomod</span>
+          <span>
+            <span class="plog__title">Revology New Classic Convertible Mustang: Interview With Tom Scarpello, Episode 214</span>
+            <span class="plog__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+        <a class="plog__row" href="https://creators.spotify.com/pod/profile/mustangownerspodcast/episodes/Tom-Scarpello---Founder---Revology-Cars-e235kp8" rel="noopener" target="_blank">
+          <span class="plog__pub">Mustang Owner&rsquo;s Podcast</span>
+          <span>
+            <span class="plog__title">Tom Scarpello &mdash; Founder &mdash; Revology Cars</span>
+            <span class="plog__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+        <a class="plog__row" href="https://www.youtube.com/watch?v=S9T3Ukq7Ri4" rel="noopener" target="_blank">
+          <span class="plog__pub">American Dream Machines</span>
+          <span>
+            <span class="plog__title">Revology, my personal interview with Tom Scarpello</span>
+            <span class="plog__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+          </span>
+        </a>
+      </div>
       <p class="press__note">Every item above links to the publisher&rsquo;s own page. Titles and channel names are reproduced as the publishers give them; Revology Cars did not produce these interviews and does not control their content.</p>
-    </div>
-  </section>
-
-  <!-- ==================== CROSS-LINKS ==================== -->
-  <section class="band band--ink" aria-label="More about Revology">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>What He Built</h2>
-        <hr class="h-rule">
-      </div>
-      <div class="xlinks">
-        <a class="xlink" href="/about-us">
-          <span class="xlink__k">The company</span>
-          <h3>About Revology</h3>
-          <p>The origin story, the platform-based engineering approach, the 65,757 sq ft Orlando factory, and the milestones from 2014 to the Boss 302.</p>
-        </a>
-        <a class="xlink" href="/testimonials">
-          <span class="xlink__k">The owners</span>
-          <h3>Testimonials</h3>
-          <p>Forty-two owner accounts, published in full: production cars #2 to #371, across eighteen US states, Botswana and South America.</p>
-        </a>
-        <a class="xlink" href="/">
-          <span class="xlink__k">Everything</span>
-          <h3>Company Hub</h3>
-          <p>One index to the company, the founder and the owners, with the figures and the routes into ordering a car.</p>
-        </a>
-      </div>
-      <div class="btn-row">
-        <a class="btn btn--accent" href="https://revologycars.com/contact-us/">Contact Revology</a>
-        <a class="btn btn--ghost" href="https://revologycars.com/careers/">Careers</a>
-      </div>
     </div>
   </section>
 
@@ -703,7 +801,7 @@ figcaption{
       "@id": "https://revologycars.com/author/tom-scarpello/#webpage",
       "url": "https://revologycars.com/author/tom-scarpello/",
       "name": "Tom Scarpello, Founder & CEO of Revology Cars",
-      "description": "Tom Scarpello spent 17 years at Ford, six of them running the Special Vehicle Team, before founding Revology Cars in 2014. Career, expertise and published interviews.",
+      "description": "Tom Scarpello spent 17 years at Ford, six of them leading marketing and sales for the Special Vehicle Team, before founding Revology Cars in 2014. Career, expertise and published interviews.",
       "mainEntity": {
         "@id": "https://revologycars.com/author/tom-scarpello/#person"
       },
@@ -718,8 +816,8 @@ figcaption{
       "givenName": "Tom",
       "familyName": "Scarpello",
       "jobTitle": "Founder & CEO",
-      "description": "Founder and CEO of Revology Cars. Spent his entire career in the automotive industry, including 17 years at Ford Motor Company, where he ran the Special Vehicle Team from 1998 to 2004, and senior management roles at Jaguar, Nissan and Infiniti. Founded Revology Cars in Orlando, Florida in 2014.",
-      "image": "https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg",
+      "description": "Founder and CEO of Revology Cars. Spent his entire career in the automotive industry, including 17 years at Ford Motor Company, where he led marketing and sales for the Special Vehicle Team from 1998 to 2004, and senior management roles at Jaguar, Nissan and Infiniti. Founded Revology Cars in Orlando, Florida in 2014.",
+      "image": "https://revologycars.com/wp-content/uploads/2025/06/dr1a4085-2.jpeg",
       "url": "https://revologycars.com/author/tom-scarpello/",
       "worksFor": {
         "@id": "https://revologycars.com/#organization"
@@ -737,10 +835,26 @@ figcaption{
         "Performance vehicle programs",
         "Automotive marketing and sales"
       ],
-      "alumniOf": {
-        "@type": "Organization",
-        "name": "Ford Motor Company"
-      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Kellogg School of Management, Northwestern University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Georgia"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "MBA",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Kellogg School of Management, Northwestern University"
+          }
+        }
+      ],
       "sameAs": [
         "https://www.linkedin.com/in/tom-scarpello-121a613/"
       ],
@@ -896,6 +1010,7 @@ figcaption{
   });
 })();
 </script>
+
 
 </body>
 </html>
