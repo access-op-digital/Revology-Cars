@@ -3,8 +3,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/about-us", "destination": "/index.html" },
-    { "source": "/about", "destination": "/index.html" },
+    { "source": "/company", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about-us.html" },
     { "source": "/author/tom-scarpello", "destination": "/tom-scarpello.html" },
     { "source": "/author", "destination": "/tom-scarpello.html" },
     { "source": "/meet-the-founder", "destination": "/tom-scarpello.html" }

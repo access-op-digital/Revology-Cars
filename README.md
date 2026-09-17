@@ -7,15 +7,21 @@ Static HTML. No build step, no dependencies, no bundled assets.
 
 | Page | File | Route on this deployment | Intended production path |
 |---|---|---|---|
-| Company hub | `company.html` | `/company` | `/company/` *(new — path to confirm)* |
-| About Us | `index.html` | `/`, `/about-us`, `/about` | `/about-us/` |
+| Company hub | `index.html` | `/`, `/company` | `/company/` *(new — path to confirm)* |
+| About Us | `about-us.html` | `/about-us`, `/about` | `/about-us/` |
 | Tom Scarpello (author) | `tom-scarpello.html` | `/author/tom-scarpello`, `/meet-the-founder` | `/author/tom-scarpello/` *(new)* |
 | Testimonials | `testimonials.html` | `/testimonials` | `/testimonials/` |
 
+**The hub is the deployment root**, so <https://revology-cars.vercel.app> opens the index of the
+three pages and the client can click through from there. That is a staging arrangement: on
+production the site root is Revology's real homepage, which is why the hub still canonicalises
+to `/company/` rather than to `/`.
+
 All four share one header, footer, nav panel and brand CSS block, and cross-link to each other
-with root-relative paths (`/testimonials`, `/author/tom-scarpello`, `/company`) so the set is
-clickable on the preview and on production. Links to pages that already exist on WordPress —
-inventory, registry, how to order, management team, careers, FAQ, contact — stay absolute.
+with root-relative paths (`/`, `/about-us`, `/author/tom-scarpello`, `/testimonials`) so the
+set is clickable on the preview and on production. Links to pages that already exist on
+WordPress — inventory, registry, how to order, management team, careers, FAQ, contact — stay
+absolute.
 
 ---
 
@@ -30,9 +36,10 @@ Vercel auto-detects this as a static site.
 | Output Directory | *(leave empty — repo root)* |
 | Install Command | *(leave empty)* |
 
-`vercel.json` sets `cleanUrls`, rewrites `/about-us`, `/about`, `/author/tom-scarpello`,
-`/author` and `/meet-the-founder`, and sends `Cache-Control: max-age=0, must-revalidate` on
-every `.html`.
+`vercel.json` sets `cleanUrls` and rewrites `/company` (to the hub at the root), `/about`,
+`/author/tom-scarpello`, `/author` and `/meet-the-founder`. `/about-us` and `/testimonials`
+need no rewrite — `cleanUrls` serves them from their own files. `Cache-Control:
+max-age=0, must-revalidate` goes on every `.html`.
 
 ### A note on `X-Robots-Tag`
 
@@ -46,7 +53,7 @@ preview out of search results so it can't compete with the live pages — each p
 
 ## The pages
 
-### Company hub — `company.html`
+### Company hub — `index.html`
 
 An index to the other three. One H1, three H2s: *Three Places to Start* (a row per page, with
 a list of what is actually on it), *Revology Cars In Brief*, *Everywhere Else on
@@ -275,7 +282,8 @@ Two points handled deliberately rather than glossed over:
 
 ### One open item
 
-`company.html` canonicalises to `https://revologycars.com/company/`. That path does not exist
-yet — it is a proposal. If the client wants the hub somewhere else (`/inside-revology/`,
+The hub (`index.html`) canonicalises to `https://revologycars.com/company/`. That path does not
+exist yet — it is a proposal. If the client wants the hub somewhere else (`/inside-revology/`,
 `/the-company/`), change the `<link rel="canonical">`, the `og:url`, the three `@id`/`url`
-values in its JSON-LD, and the `/company` links in the other three files' nav panels and footers.
+values in its JSON-LD, and the `/company` rewrite in `vercel.json`. The nav and footer link to
+the hub as `/`, which does not change.

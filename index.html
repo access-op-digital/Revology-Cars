@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Revology</title>
-<meta name="description" content="Revology Cars re-engineers 1967&ndash;1970 Ford Mustangs and Shelby GTs in a 65,757 sq ft Orlando factory. Meet the founder, the engineering approach, the team and the build standard.">
-<link rel="canonical" href="https://revologycars.com/about-us/">
+<title>Revology Cars Company Hub</title>
+<meta name="description" content="One index to Revology Cars: how the reproduction Mustangs are engineered and built in Orlando, the founder who spent 17 years at Ford, and 42 owner accounts published in full.">
+<link rel="canonical" href="https://revologycars.com/company/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="About Revology: Redefining the Classic Mustang">
-<meta property="og:description" content="Since 2014, Revology has engineered and built re-engineered and restored 1967-1970 Mustangs and Shelby GTs in Orlando, Florida. Over 360 cars delivered to 20 countries.">
-<meta property="og:url" content="https://revologycars.com/about-us/">
-<meta property="og:image" content="https://revologycars.com/wp-content/uploads/2026/04/revology1.jpg">
+<meta property="og:title" content="Revology Cars: Company Hub">
+<meta property="og:description" content="The company, the founder, and the owners &mdash; three pages, one index.">
+<meta property="og:url" content="https://revologycars.com/company/">
+<meta property="og:image" content="https://revologycars.com/wp-content/uploads/2026/04/revology-all-staff-2026-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <style>
@@ -117,6 +117,11 @@ figcaption{
 .media-frame--wide{aspect-ratio:16/10}
 .media-frame--pano{aspect-ratio:21/9}
 
+/* ---------- Section heads ---------- */
+.section-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-head .lede{max-width:none}
+.section-head h2{text-wrap:pretty}
+
 /* ---------- Header ---------- */
 .site-head{
   position:sticky;top:0;z-index:50;
@@ -127,16 +132,10 @@ figcaption{
   display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
   gap:1.5rem;padding-block:.85rem;
 }
-
-/* left + right clusters */
 .nav-group{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2.15rem);min-width:0}
 .nav-group--right{justify-content:flex-end}
-
-/* centred wordmark */
 .nav-logo{display:block;line-height:0}
 .nav-logo img{height:26px;width:auto}
-
-/* link clusters */
 .nav-links{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2.15rem)}
 .nav-links a{
   font-family:var(--f-body);font-weight:400;font-size:.82rem;
@@ -145,8 +144,6 @@ figcaption{
   transition:color .2s ease;
 }
 .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--accent)}
-
-/* menu toggle */
 .nav-burger,.nav-search{
   display:flex;align-items:center;gap:.7rem;
   background:none;border:0;padding:0;cursor:pointer;color:var(--white);
@@ -158,8 +155,6 @@ figcaption{
 .nav-burger__icon{display:flex;flex-direction:column;gap:4px;width:20px}
 .nav-burger__icon span{display:block;height:2px;width:100%;background:currentColor;border-radius:2px}
 .nav-search svg{width:19px;height:19px;display:block}
-
-/* contact button — #EC5516 pill from the live header nav */
 .nav-cta{
   font-family:var(--f-body);font-weight:400;font-size:.82rem;
   letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;
@@ -168,8 +163,6 @@ figcaption{
   transition:background .2s ease;
 }
 .nav-cta:hover{background:var(--accent-lift)}
-
-/* search field, revealed by the icon */
 .nav-find{border-top:1px solid var(--rule-dark);padding-block:.85rem}
 .nav-find form{display:flex;gap:.6rem;align-items:center}
 .nav-find input{
@@ -183,8 +176,6 @@ figcaption{
   padding:.7rem 1.4rem;cursor:pointer;
   font-family:var(--f-body);font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;
 }
-
-/* collapsed panel */
 .nav-panel{border-top:1px solid var(--rule-dark);padding-block:.5rem 1.1rem}
 .nav-panel a{
   display:block;padding:.75rem 0;text-decoration:none;color:var(--white);
@@ -193,7 +184,6 @@ figcaption{
 }
 .nav-panel a:last-child{border-bottom:0}
 .nav-panel a:hover,.nav-panel a[aria-current="page"]{color:var(--accent)}
-
 @media (max-width:1180px){
   .nav-links a{font-size:.75rem;letter-spacing:.05em}
   .nav-cta{font-size:.75rem;padding:.65rem .95rem}
@@ -207,30 +197,11 @@ figcaption{
   .site-head__in{gap:.9rem}
 }
 
-/* ---------- Hero ---------- */
-.hero{position:relative;background:#0D0D0D;overflow:hidden}
-.hero__media{position:absolute;inset:0}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:58% 62%;opacity:.85}
-.hero__scrim{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to top,rgba(13,13,13,.97) 4%,rgba(13,13,13,.74) 32%,rgba(13,13,13,.16) 66%,rgba(13,13,13,.6) 100%),
-    linear-gradient(to right,rgba(13,13,13,.88) 0%,rgba(13,13,13,.3) 56%,rgba(13,13,13,0) 88%);
-}
-.hero__in{position:relative;padding-block:clamp(5rem,15vw,10.5rem) clamp(3rem,6vw,5rem)}
-.hero h1{max-width:15ch}
-.h1-accent{color:var(--accent)}
-.hero .lede{color:#D8D7D3;max-width:62ch;font-size:clamp(1rem,.95rem + .35vw,1.18rem)}
-
 /* ---------- Figures band ---------- */
-/* recessed near-black so it reads as its own band against the #212121
-   manufacturing section below, with rules top and bottom for definition.
-   The band below still drops its usual top padding, since this one
-   supplies the breathing room. */
 .figures{border-block:1px solid var(--rule-dark);background:#0C0C0C}
 .figures + .band{padding-block-start:clamp(2.25rem,3.5vw,3.5rem)}
 .figures__grid{
-  display:grid;grid-template-columns:repeat(6,1fr);
+  display:grid;grid-template-columns:repeat(var(--cols,6),1fr);
   padding-block:clamp(2rem,3.5vw,2.75rem);gap:2rem 1.25rem;
 }
 .fig__n{
@@ -241,185 +212,15 @@ figcaption{
 @media (max-width:1000px){.figures__grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.figures__grid{grid-template-columns:repeat(2,1fr)}}
 
-/* ---------- Section heads ---------- */
-/* section heads run edge to edge - no capped measure, no gap on the right.
-   H2s inside the two-column manufacturing and build blocks keep their
-   column width, since the layout there is the point. */
-.section-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
-.section-head .lede{max-width:none}
-/* balance evens the lines out, which on a two-line heading leaves both
-   of them short of the right edge. pretty fills each line instead, while
-   still keeping a lone word off the last line. */
-.section-head h2{text-wrap:pretty}
-
-/* ---------- Founder letter ---------- */
-.letter{display:grid;grid-template-columns:1fr 1.04fr;gap:var(--gap);align-items:stretch}
-/* the portrait takes up whatever height the copy column has spare,
-   so the quote closes the column instead of leaving a hole under it */
-.letter__aside{display:flex;flex-direction:column;gap:1.5rem}
-/* the column gap already supplies the spacing above the button */
-.letter__aside .btn-row{margin-top:0}
-.letter__aside figure{display:flex;flex-direction:column;flex:1}
-.letter__aside .media-frame{flex:1;aspect-ratio:auto;min-height:19rem}
-/* smaller and across a wider measure than before, so it sets in fewer,
-   shorter lines and hands the height back to the portrait above it */
-.pull{
-  font-family:var(--f-display);font-weight:700;line-height:1.24;
-  font-size:clamp(1.05rem,.95rem + .45vw,1.32rem);
-  color:var(--ink);margin:0;padding-left:1.2rem;border-left:3px solid var(--accent);
-  max-width:46ch;text-wrap:pretty;
-}
-@media (max-width:900px){
-  .letter{grid-template-columns:1fr}
-  .letter__aside .media-frame{flex:0 0 auto;aspect-ratio:16/10;min-height:0}
-}
-.sig{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--rule-bone)}
-.sig__name{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:1.35rem;line-height:1;color:var(--ink)}
-.sig__role{font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
-
-/* ---------- Timeline (real dated sequence) ---------- */
-.timeline{margin-top:clamp(3rem,6vw,5rem);border-top:1px solid var(--rule-bone);padding-top:2.5rem}
-.timeline__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 2rem}
-@media (max-width:860px){.timeline__grid{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.timeline__grid{grid-template-columns:1fr}}
-.tl{padding-top:1.1rem;border-top:2px solid var(--accent)}
-.tl__yr{font-family:var(--f-label);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);font-variant-numeric:tabular-nums}
-.tl__t{font-size:1.1rem;line-height:1.08;margin:.6rem 0 .5rem;color:var(--ink)}
-.tl p{margin:0;font-size:.95rem;line-height:1.62;color:var(--mute-on-bone)}
-
-/* ---------- Pillars ---------- */
-.pillars{display:grid;gap:clamp(3rem,6vw,5.5rem);margin-top:clamp(2.5rem,5vw,4rem)}
-.pillar{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:center}
-.pillar:nth-child(even) .pillar__media{order:2}
-@media (max-width:860px){
-  .pillar{grid-template-columns:1fr}
-  .pillar:nth-child(even) .pillar__media{order:0}
-}
-.pillar .body{margin-top:1.25rem}
-
-/* ---------- Split (manufacturing) ---------- */
-/* stretch, not center, so the first image's top edge lines up with the heading */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:stretch}
-/* two stacked images share the column height between them, so the pair
-   fills the copy alongside instead of leaving dead space */
-.split__media{display:flex;flex-direction:column;gap:clamp(1rem,2vw,1.5rem)}
-.split__media .media-frame{flex:1;aspect-ratio:auto;min-height:13rem}
-@media (max-width:900px){
-  .split{grid-template-columns:1fr}
-  .split__media .media-frame{flex:0 0 auto;aspect-ratio:16/10;min-height:0}
-}
-
-/* ---------- Build sheet ---------- */
-.sheet{border-top:2px solid var(--ink);margin-top:clamp(2rem,4vw,3rem)}
-.sheet__row{
-  display:grid;grid-template-columns:minmax(8.5rem,.3fr) 1fr;gap:1rem 2.5rem;
-  padding:1.6rem 0;border-bottom:1px solid var(--rule-bone);align-items:start;
-}
-@media (max-width:640px){.sheet__row{grid-template-columns:1fr;gap:.5rem}}
-/* tracking eases off as the size goes up - .13em was set for 10px type */
-.sheet__k{
-  font-family:var(--f-label);font-size:clamp(.82rem,.72rem + .35vw,1.05rem);
-  letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);line-height:1.3;
-  padding-top:.22rem;   /* drops the label onto the value's first baseline */
-}
-.sheet__v{margin:0;color:var(--mute-on-bone);max-width:66ch}
-
-/* ---------- Team ---------- */
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,2.5vw,2.25rem)}
-@media (max-width:1000px){.team{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:760px){.team{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:440px){.team{grid-template-columns:1fr}}
-.member{display:flex;flex-direction:column}
-.member__ph{aspect-ratio:1;overflow:hidden;background:var(--ink-3);border:1px solid var(--rule-dark)}
-.member__ph img{width:100%;height:100%;object-fit:cover}
-.member__n{font-size:1.12rem;line-height:1.05;margin:1.1rem 0 .45rem}
-.member__r{font-family:var(--f-label);font-size:.57rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);line-height:1.6}
-.member p{font-size:.9rem;line-height:1.62;color:var(--mute-on-dark);margin:.85rem 0 0}
-
 /* ---------- Video ---------- */
 .video{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--rule-dark)}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .band--bone .video{border-color:var(--rule-bone)}
-.origin-film{margin-top:clamp(2.5rem,5vw,4rem)}
-
-/* ---------- Location ---------- */
-/* copy left, film and map right. The map takes flex:1 so the pair
-   finishes level with the bottom of the address block. */
-.loc{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:stretch}
-/* film and map sit on the left, copy on the right. Done with order
-   rather than markup so the copy still comes first in the document, and
-   so it leads when the columns stack on narrow screens. */
-.loc__media{display:flex;flex-direction:column;gap:1.5rem;order:-1}
-@media (max-width:900px){.loc__media{order:0}}
-.loc__map{position:relative;flex:1;min-height:17rem;background:#0F0F0F;border:1px solid var(--rule-dark)}
-.loc__map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media (max-width:900px){.loc{grid-template-columns:1fr}}
-.addr{font-style:normal;margin-top:2rem;border-top:1px solid var(--rule-dark);padding-top:1.75rem}
-.addr dl{display:grid;grid-template-columns:minmax(6rem,auto) 1fr;gap:.9rem 1.75rem;margin:0}
-@media (max-width:480px){.addr dl{grid-template-columns:1fr;gap:.25rem 0}.addr dd{margin-bottom:.9rem}}
-.addr dt{font-family:var(--f-label);font-size:.59rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);padding-top:.3rem}
-.addr dd{margin:0;color:#D4D4D2}
-.addr a{color:var(--white);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
-.addr a:hover{color:var(--accent)}
-
-/* ---------- Final CTA ---------- */
-/* the steps column runs about twice the height of a 16:10 photo, so
-   centring left the image floating against nothing. It now stretches,
-   and the car is contained rather than cropped - the source is a studio
-   shot on white, so a white panel behind it reads as one plate. */
-/* Full-bleed car with the copy over it. Dark ground and white text: a
-   light scrim over a light photo gave almost nothing to read against. */
-.cta{position:relative;overflow:hidden;background:#101010;color:var(--white)}
-.cta__bg{position:absolute;inset:0}
-.cta__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
-.cta__scrim{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to right,
-      rgba(11,11,11,.96) 0%,
-      rgba(11,11,11,.92) 40%,
-      rgba(11,11,11,.6) 62%,
-      rgba(11,11,11,.3) 82%,
-      rgba(11,11,11,.22) 100%),
-    linear-gradient(to bottom,rgba(11,11,11,.45),rgba(11,11,11,.25) 45%,rgba(11,11,11,.5));
-}
-.cta__in{position:relative}
-.cta__copy{max-width:min(58ch,56%)}
-/* steps live only here, so they take the dark ground's colours */
-.cta .steps li,.cta .steps li:last-child{border-color:var(--rule-dark)}
-.cta .steps__t{color:var(--white)}
-.cta .steps__t::before{color:var(--accent)}
-.cta .steps__d{color:#C4C3BF}
-@media (max-width:860px){
-  /* no room beside the car, so wash the whole frame evenly */
-  .cta__scrim{background:linear-gradient(to bottom,rgba(11,11,11,.9),rgba(11,11,11,.88))}
-  .cta__copy{max-width:none}
-}
-@media (max-width:860px){.cta__in{grid-template-columns:1fr}}
-/* every line starts at the column's left edge - the number sits inline
-   on the label line rather than in its own track, which was indenting
-   the step text away from the heading, lede and buttons around it */
-.steps{margin:2.25rem 0 0;padding:0;list-style:none;counter-reset:s}
-.steps li{counter-increment:s;padding:1.15rem 0;border-top:1px solid var(--rule-bone)}
-.steps li:last-child{border-bottom:1px solid var(--rule-bone)}
-.steps__t{display:block;margin:0 0 .4rem;font-weight:700;color:var(--ink)}
-.steps__t::before{
-  content:counter(s,decimal-leading-zero);
-  font-family:var(--f-label);font-weight:400;font-size:.68rem;letter-spacing:.08em;
-  color:var(--accent-ink);font-variant-numeric:tabular-nums;margin-right:.8rem;
-}
-.steps__d{margin:0;color:var(--mute-on-bone);font-size:.95rem;line-height:1.62}
 
 /* ---------- Final CTA banner ---------- */
-/* bone, so the page closes light between the dark CTA above it and the
-   footer below. Statement left, actions right - not a centred stack. */
-/* ground and colours come from band--bone on the section, so the ghost
-   button picks up its dark-on-bone treatment instead of the white-on-
-   dark default, which would have been invisible here */
 .final{padding-block:clamp(2.75rem,5vw,4.25rem)}
 .final__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.75rem 3rem}
 .final__copy{flex:1 1 32rem;min-width:0}
-/* uncapped, so the heading runs the full width of its block */
 .final__t{
   font-family:var(--f-display);font-weight:700;text-transform:uppercase;line-height:1.02;
   font-size:clamp(1.6rem,1.2rem + 1.6vw,2.5rem);margin:0;max-width:none;text-wrap:pretty;
@@ -436,6 +237,68 @@ figcaption{
 .site-foot a:hover{color:var(--accent)}
 .foot-links{display:flex;flex-wrap:wrap;gap:1.25rem;font-family:var(--f-label);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase}
 .legal{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--rule-dark);font-size:.78rem;line-height:1.65;color:#6F6F6D;max-width:92ch}
+
+/* ---------- Hub hero ---------- */
+.hhero{position:relative;background:#0D0D0D;overflow:hidden}
+.hhero__media{position:absolute;inset:0}
+.hhero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
+.hhero__scrim{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(13,13,13,.97) 8%,rgba(13,13,13,.8) 42%,rgba(13,13,13,.5) 78%,rgba(13,13,13,.7) 100%),
+    linear-gradient(to right,rgba(13,13,13,.9) 0%,rgba(13,13,13,.5) 60%,rgba(13,13,13,.25) 100%);
+}
+.hhero__in{position:relative;padding-block:clamp(4rem,11vw,8rem) clamp(2.75rem,5vw,4.5rem)}
+.hhero__kicker{
+  font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1.1rem;
+}
+.hhero h1{max-width:20ch;font-size:clamp(2.2rem,1.3rem + 4vw,4.8rem)}
+.h1-accent{color:var(--accent)}
+.hhero .lede{color:#D8D7D3;max-width:64ch;font-size:clamp(1rem,.95rem + .35vw,1.18rem)}
+
+/* ---------- The three pages ---------- */
+/* One row per page: image on one side, the contents list on the other, so
+   each card can say what is actually on the page it points at. */
+.hubs{display:grid;gap:clamp(3rem,6vw,5.5rem);margin-top:clamp(2.5rem,5vw,4rem)}
+.hub{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:center}
+.hub:nth-child(even) .hub__media{order:2}
+@media (max-width:860px){
+  .hub{grid-template-columns:1fr}
+  .hub:nth-child(even) .hub__media{order:0}
+}
+.hub__k{font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .9rem}
+.hub__h{font-size:clamp(1.7rem,1.3rem + 1.5vw,2.6rem);line-height:1;color:var(--white)}
+.hub__d{margin:1.15rem 0 0;color:var(--mute-on-dark);max-width:54ch}
+.hub__list{margin:1.5rem 0 0;padding:0;list-style:none;border-top:1px solid var(--rule-dark)}
+.hub__list li{
+  padding:.7rem 0 .7rem 1.5rem;border-bottom:1px solid var(--rule-dark);position:relative;
+  font-size:.95rem;line-height:1.6;color:#C9C9C6;
+}
+.hub__list li::before{content:"";position:absolute;left:0;top:1.28rem;width:.55rem;height:2px;background:var(--accent)}
+.hub .btn-row{margin-top:1.9rem}
+
+/* ---------- In brief ---------- */
+.brief{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--gap);align-items:start}
+@media (max-width:900px){.brief{grid-template-columns:1fr}}
+.pull{
+  font-family:var(--f-display);font-weight:700;line-height:1.24;
+  font-size:clamp(1.05rem,.95rem + .45vw,1.32rem);
+  color:var(--ink);margin:0;padding-left:1.2rem;border-left:3px solid var(--accent);
+  max-width:46ch;text-wrap:pretty;
+}
+.sig{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--rule-bone)}
+.sig__name{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:1.35rem;line-height:1;color:var(--ink)}
+.sig__role{font-family:var(--f-label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+
+/* ---------- Elsewhere ---------- */
+.elsewhere{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.25rem,2.5vw,2rem)}
+@media (max-width:1000px){.elsewhere{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.elsewhere{grid-template-columns:1fr}}
+.el{display:block;text-decoration:none;padding-top:1.1rem;border-top:2px solid var(--accent)}
+.el h3{font-size:1.08rem;line-height:1.08;margin:0 0 .45rem;color:var(--white)}
+.el p{margin:0;font-size:.9rem;line-height:1.6;color:var(--mute-on-dark)}
+.el:hover h3{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -461,7 +324,7 @@ figcaption{
 
     <div class="nav-group nav-group--right">
       <nav class="nav-links" aria-label="Company">
-        <a href="/about-us" aria-current="page">About Us</a>
+        <a href="/about-us">About Us</a>
         <a href="/testimonials">Testimonials</a>
       </nav>
       <a class="nav-cta" href="https://revologycars.com/contact-us/">Contact Us</a>
@@ -486,8 +349,8 @@ figcaption{
     <a href="https://revologycars.com/#models">Models</a>
     <a href="https://revologycars.com/inventory/">Inventory</a>
     <a href="https://revologycars.com/registry/">Registry</a>
-    <a href="/company">Company Hub</a>
-    <a href="/about-us" aria-current="page">About Us</a>
+    <a href="/" aria-current="page">Company Hub</a>
+    <a href="/about-us">About Us</a>
     <a href="/author/tom-scarpello">Tom Scarpello, Founder</a>
     <a href="https://revologycars.com/meet-the-team/">Management Team</a>
     <a href="/testimonials">Testimonials</a>
@@ -501,148 +364,20 @@ figcaption{
 <main>
 
   <!-- ==================== HERO ==================== -->
-  <section class="hero">
-    <div class="hero__media">
-      <img src="https://revologycars.com/wp-content/uploads/2026/04/revology1.jpg"
-           alt="A Revology 1970 Mustang Boss 302 in orange at speed on an open road in low evening light"
-           width="1920" height="1280" fetchpriority="high">
+  <section class="hhero">
+    <div class="hhero__media">
+      <img src="https://revologycars.com/wp-content/uploads/2026/04/revology-all-staff-2026-1.jpg"
+           alt="The full Revology Cars staff photographed together outside the Orlando factory"
+           width="1920" height="1080" fetchpriority="high">
     </div>
-    <div class="hero__scrim"></div>
-    <div class="wrap hero__in">
-      <h1>About Revology: <span class="h1-accent">Redefining the Classic&nbsp;Mustang</span></h1>
-      <p class="lede">Revology Cars builds reproduction Mustang and Shelby GT vehicles inspired by iconic 1967&ndash;1970 Mustang designs, combining classic Ford styling with modern engineering and craftsmanship. Founded in 2014 by Tom Scarpello, Revology develops each vehicle from an engineered platform using an OEM-inspired approach, preserving the character of classic Mustangs while integrating modern systems and technology.</p>
+    <div class="hhero__scrim"></div>
+    <div class="wrap hhero__in">
+      <p class="hhero__kicker">Company hub</p>
+      <h1>Inside <span class="h1-accent">Revology Cars</span></h1>
+      <p class="lede">Three pages cover the company end to end: how the cars are engineered and built, the founder whose standards decide what ships, and the owners who have driven the results. Start wherever your question is.</p>
       <div class="btn-row">
-        <a class="btn btn--accent" href="#build">Build Your Revology</a>
+        <a class="btn btn--accent" href="#pages">The Three Pages</a>
         <a class="btn btn--ghost" href="https://revologycars.com/inventory/">View Inventory</a>
-      </div>
-    </div>
-  </section>
-  <!-- ==================== ORIGIN STORY ==================== -->
-  <section class="band band--bone" id="origin">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>The Origin Story of Revology Cars</h2>
-        <hr class="h-rule">
-      </div>
-
-      <div class="letter">
-        <div class="letter__aside">
-          <figure>
-            <div class="media-frame media-frame--wide">
-              <img src="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg"
-                   alt="Revology founder and CEO Tom Scarpello standing beside a blue Revology Mustang GT fastback on the coast"
-                   width="1080" height="608" loading="lazy">
-            </div>
-            <figcaption class="sig">
-              <span class="sig__name">Tom Scarpello</span>
-              <span class="sig__role">Founder &amp; CEO, Revology Cars</span>
-            </figcaption>
-          </figure>
-          <blockquote class="pull">&ldquo;This is my life&rsquo;s work. Everything I have learned in almost 35 years in the automotive industry, rolled up into one very special line of products.&rdquo;</blockquote>
-
-          <div class="btn-row">
-            <a class="btn btn--accent" href="/author/tom-scarpello">Meet the Founder</a>
-          </div>
-        </div>
-
-        <div class="body">
-          <p>The story of Revology Cars began with Tom Scarpello&rsquo;s passion for the original Mustang and his extensive experience in the automotive industry. Tom Scarpello spent 17 years working at Ford, running the Special Vehicle Team from 1998 to 2004, and kept hearing the same question at auto shows: <strong>&ldquo;Why doesn&rsquo;t Ford bring back the original Mustang?&rdquo;</strong></p>
-          <p>While later Mustang generations incorporated styling influences from the original 1960s models, Scarpello recognized that many enthusiasts continued to value the authenticity and character of the original Mustang design. This inspired the idea behind Revology Cars: creating a reproduction Mustang that preserved classic styling while incorporating modern engineering, technology, and vehicle systems.</p>
-          <p>Founded in 2014, Revology Cars was built around the belief that a modern classic vehicle requires more than updated components. Changes to one vehicle system can affect others, making proper engineering and system integration essential for performance, reliability, comfort, and safety.</p>
-          <p>The result was the Revology Mustang, a modern interpretation of the classic Mustang developed with contemporary systems and components while maintaining the design heritage and personality of the original. Based in Orlando, Florida, Revology Cars continues to design and manufacture reproduction Mustang and Shelby GT vehicles for enthusiasts who appreciate classic automotive design combined with modern functionality.</p>
-        </div>
-      </div>
-
-      <div class="origin-film">
-        <div class="video">
-          <iframe src="https://www.youtube.com/embed/xlStTBAeTyA?rel=0"
-                  title="Revology Cars celebrates its tenth year anniversary"
-                  loading="lazy" allowfullscreen
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-        </div>
-      </div>
-
-      <!-- Dated sequence: these are real, ordered milestones -->
-      <div class="timeline">
-        <div class="timeline__grid">
-          <div class="tl">
-            <div class="tl__yr">2014</div>
-            <h3 class="tl__t">Revology begins operations</h3>
-            <p>Revology Cars was founded in 2014 by Tom Scarpello, a former Ford executive, with a career that included leading Ford&rsquo;s Special Vehicle Team and senior management roles at Jaguar, Nissan and Infiniti.</p>
-          </div>
-          <div class="tl">
-            <div class="tl__yr">2015</div>
-            <h3 class="tl__t">Amelia Island debut</h3>
-            <p>Revology unveiled the 1966 Mustang convertible concept. The concept debuted at the Amelia Island Concours d&rsquo;Elegance. The concours audience praised the concept&rsquo;s quality and execution.</p>
-          </div>
-          <div class="tl">
-            <div class="tl__yr">2015 &ndash; 2024</div>
-            <h3 class="tl__t">Licensed by Ford</h3>
-            <p>Ford authorized Revology to build reproduction 1965&ndash;1970 Mustang rolling chassis, the first company to hold such a license, from 2015 to 2024. Revology now restores donor cars to the same specification instead.</p>
-          </div>
-          <div class="tl">
-            <div class="tl__yr">2024</div>
-            <h3 class="tl__t">Ten years of production</h3>
-            <p>Revology reached ten years of production. Revology completed its 200th car in February 2024. Building the first 100 cars took Revology eight years. Building the next 100 cars took Revology two years.</p>
-          </div>
-          <div class="tl">
-            <div class="tl__yr">2025</div>
-            <h3 class="tl__t">Boss 429 world debut</h3>
-            <p>Revology unveiled the 1969 Mustang Boss 429. The unveiling took place at the Los Angeles Auto Show. Revology had delivered 324 cars by this point. Those cars reached customers in the United States and 19 other countries.</p>
-          </div>
-          <div class="tl">
-            <div class="tl__yr">2026</div>
-            <h3 class="tl__t">Boss 302 announced</h3>
-            <p>Revology announced the 1970 Mustang Boss 302. The Boss 302 pays tribute to Ford&rsquo;s SCCA Trans-Am racing heritage. This announcement followed the Boss 429 introduction.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== RE-ENGINEERING ==================== -->
-  <section class="band band--ink" id="engineering">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Re-Engineering Classic Mustangs With Modern Technology</h2>
-        <hr class="h-rule">
-        <p class="lede">Every Revology vehicle is developed from a dedicated vehicle platform rather than created as a one-off modification. Revology Cars engineers each platform to support the integration of modern automotive systems and components, creating reproduction Mustang and Shelby GT vehicles that are designed as complete automobiles. This platform-based approach enables consistency, continuous refinement, and the integration of classic Mustang design with modern engineering.</p>
-      </div>
-
-      <div class="pillars">
-        <article class="pillar">
-          <div class="pillar__media">
-            <div class="media-frame media-frame--wide">
-              <img src="https://revologycars.com/wp-content/uploads/2024/05/scanning.jpg"
-                   alt="A Revology engineer 3D-scanning a primed Mustang fastback body shell marked with reference targets"
-                   width="1040" height="585" loading="lazy">
-            </div>
-          </div>
-          <div>
-            <h3>Engineered Like an Automaker, Not a Shop</h3>
-            <div class="body">
-              <p>We apply an OEM-style approach to developing classic Mustang and Shelby GT vehicles. Instead of building each vehicle independently, we develop a platform designed to integrate modern automotive systems while preserving the styling, character, and heritage of the original Mustang.</p>
-              <p>This engineering process focuses on system integration, reliability, serviceability, and continuous improvement. The result is a modern classic Mustang designed to deliver the craftsmanship of a specialty automobile with the functionality expected from a contemporary vehicle.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="pillar">
-          <div class="pillar__media">
-            <div class="media-frame media-frame--wide">
-              <img src="https://revologycars.com/wp-content/uploads/2026/07/1969-revology-mustang-boss-429-363-36.webp"
-                   alt="A white Revology 1969 Mustang Boss 429 photographed in motion on a Florida road"
-                   width="1600" height="1067" loading="lazy">
-            </div>
-          </div>
-          <div>
-            <h3>Designed for the Driving Experience</h3>
-            <div class="body">
-              <p>A great driving experience depends on more than horsepower alone. We engineer the relationship between the vehicle&rsquo;s systems, including suspension, steering, braking, chassis, tires, and powertrain, so they work together as a complete package.</p>
-              <p>By combining classic Mustang design with modern engineering principles, Revology creates vehicles that deliver the character of an iconic automobile with the confidence, comfort, and drivability of a modern performance vehicle.</p>
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -677,224 +412,159 @@ figcaption{
     </div>
   </section>
 
-  <!-- ==================== MANUFACTURING ==================== -->
-  <section class="band band--ink3" id="manufacturing">
+  <!-- ==================== THE THREE PAGES ==================== -->
+  <section class="band band--ink" id="pages">
     <div class="wrap">
-      <div class="split">
-        <div class="split__media">
-          <div class="media-frame media-frame--wide">
-            <img src="https://revologycars.com/wp-content/uploads/2026/08/manufacturing-mindset-revology.jpeg"
-                 alt="A Mustang body-in-white held in a red welding fixture on the Revology production floor"
-                 width="1200" height="900" loading="lazy">
+      <div class="section-head">
+        <h2>Three Places to Start</h2>
+        <hr class="h-rule">
+        <p class="lede">Each of these is a full page, not a summary. The list under each one is what you will actually find there.</p>
+      </div>
+
+      <div class="hubs">
+        <article class="hub">
+          <div class="hub__media">
+            <div class="media-frame media-frame--wide">
+              <img src="https://revologycars.com/wp-content/uploads/2026/08/manufacturing-mindset-revology.jpeg"
+                   alt="A Mustang body-in-white held in a red welding fixture on the Revology production floor"
+                   width="1200" height="900" loading="lazy">
+            </div>
           </div>
-          <div class="media-frame media-frame--wide">
-            <img src="https://revologycars.com/wp-content/uploads/2025/11/revology-1969-boss-mustang-429-nov2025-29.jpeg"
-                 alt="Studio profile of a finished Revology 1969 Mustang Boss 429 in orange"
-                 width="1600" height="1067" loading="lazy">
+          <div>
+            <p class="hub__k">The company</p>
+            <h3 class="hub__h">About Revology</h3>
+            <p class="hub__d">Why the company exists, how the cars are engineered, and where they are built. Written for anyone deciding whether a Revology is a restoration, a kit, or something else entirely.</p>
+            <ul class="hub__list">
+              <li>The origin story, from an auto-show question to a factory</li>
+              <li>Platform engineering instead of one-off modification</li>
+              <li>The 65,757 sq ft Orlando plant, and what happens in it</li>
+              <li>Dated milestones from 2014 to the 1970 Boss 302</li>
+              <li>The management team and the 170-person crew</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn--accent" href="/about-us">Read About Revology</a>
+            </div>
           </div>
+        </article>
+        <article class="hub">
+          <div class="hub__media">
+            <div class="media-frame media-frame--wide">
+              <img src="https://revologycars.com/wp-content/uploads/2024/05/Tom-About-2.jpeg"
+                   alt="Revology founder and CEO Tom Scarpello standing beside a blue Revology Mustang GT fastback on the coast"
+                   width="1080" height="608" loading="lazy">
+            </div>
+          </div>
+          <div>
+            <p class="hub__k">The founder</p>
+            <h3 class="hub__h">Tom Scarpello</h3>
+            <p class="hub__d">Seventeen years at Ford, six of them running the Special Vehicle Team, then Revology in 2014. The career that decides how these cars get specified and signed off.</p>
+            <ul class="hub__list">
+              <li>Career from Ford and SVT through Jaguar, Nissan and Infiniti</li>
+              <li>The subjects he speaks on, and what each rests on</li>
+              <li>Two quotes that explain the whole company</li>
+              <li>Every published interview, at its original source</li>
+              <li>The ten-year anniversary film</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn--accent" href="/author/tom-scarpello">Meet the Founder</a>
+            </div>
+          </div>
+        </article>
+        <article class="hub">
+          <div class="hub__media">
+            <div class="media-frame media-frame--wide">
+              <img src="https://revologycars.com/wp-content/uploads/2025/11/revology-1969-boss-mustang-429-nov2025-29.jpeg"
+                   alt="Studio profile of a finished Revology 1969 Mustang Boss 429 in orange"
+                   width="1600" height="1067" loading="lazy">
+            </div>
+          </div>
+          <div>
+            <p class="hub__k">The owners</p>
+            <h3 class="hub__h">Testimonials</h3>
+            <p class="hub__d">Forty-two owner accounts, published in full on one page. Road trips, track days, and the grocery run &mdash; in the owners&rsquo; own words, not trimmed to a pull quote.</p>
+            <ul class="hub__list">
+              <li>Production cars #2 through #371, named by model</li>
+              <li>A link straight through to 41 of those cars in the registry</li>
+              <li>Three films from Revology&rsquo;s channel, between the accounts</li>
+              <li>Eighteen US states, plus Botswana and South America</li>
+              <li>No pagination: every account on a single page</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn--accent" href="/testimonials">Read the Testimonials</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== IN BRIEF ==================== -->
+  <section class="band band--bone" id="brief">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Revology Cars In Brief</h2>
+        <hr class="h-rule">
+      </div>
+      <div class="brief">
+        <div class="body">
+          <p>Revology Cars builds reproduction Mustang and Shelby GT vehicles inspired by iconic 1967&ndash;1970 Mustang designs, combining classic Ford styling with modern engineering and craftsmanship. Founded in 2014 by Tom Scarpello, Revology develops each vehicle from an engineered platform using an OEM-inspired approach, preserving the character of classic Mustangs while integrating modern systems and technology.</p>
+          <p>Every vehicle is designed and built at the company&rsquo;s headquarters and manufacturing facility on Commerce Park Drive in Orlando, Florida, where engineering, body fabrication, paint, trim, final assembly and quality validation happen under one roof. Around 170 people work there. Cars have gone to customers in the United States and nineteen other countries.</p>
+          <p>Ford authorized Revology to build reproduction 1965&ndash;1970 Mustang rolling chassis from 2015 to 2024, the first company to hold such a license; Revology now restores donor cars to the same specification instead.</p>
         </div>
         <div>
-          <h2>Automotive Engineering and Manufacturing at Revology</h2>
-          <hr class="h-rule">
-          <div class="body" style="margin-top:1.75rem">
-            <p>Revology Cars applies automotive engineering principles to the development and manufacturing of modern classic Mustang and Shelby GT vehicles. Our process goes beyond assembling individual components by using structured development methods, engineering validation, and manufacturing controls to create complete, repeatable automobiles.</p>
-            <p>Our engineering team uses processes such as Production Part Approval Process (PPAP), Failure Mode and Effects Analysis (FMEA), tooling and fixture development, and Statistical Process Control (SPC) to support quality, consistency, and manufacturing precision. These automotive quality methods help identify potential issues, validate processes, and maintain control throughout vehicle development and production.</p>
-            <p>Since beginning production in 2014, we have continuously refined the Revology vehicle platform through ongoing engineering improvements. Over time, hundreds of functional improvements have been incorporated into the platform, enhancing areas such as reliability, serviceability, performance, and overall vehicle refinement.</p>
-            <p>From our Orlando, Florida manufacturing facility, we design and build reproduction Mustang and Shelby GT vehicles using a platform-based approach that allows each automobile to benefit from continuous development while preserving the classic Mustang character.</p>
+          <blockquote class="pull">&ldquo;This is my life&rsquo;s work. Everything I have learned in almost 35 years in the automotive industry, rolled up into one very special line of products.&rdquo;</blockquote>
+          <div class="sig">
+            <span class="sig__name">Tom Scarpello</span>
+            <span class="sig__role">Founder &amp; CEO, Revology Cars</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== QUALITY ==================== -->
-  <section class="band band--bone" id="quality">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Our Commitment to Quality, Performance &amp; Authenticity</h2>
-        <hr class="h-rule">
-        <p class="lede">Revology Cars focuses on creating modern interpretations of classic Mustang and Shelby GT vehicles through careful engineering, craftsmanship, and attention to detail. Our approach combines the heritage and styling of iconic Mustang models with modern systems, components, and manufacturing practices.</p>
-      </div>
-
-      <div class="sheet">
-        <div class="sheet__row">
-          <div class="sheet__k">Powertrain</div>
-          <p class="sheet__v">The Ford 5.0L Ti-VCT DOHC &ldquo;Coyote&rdquo; V8 at 460&nbsp;hp, or the Ford/ROUSH Performance supercharged and intercooled version at 710&nbsp;hp. Engines are sourced directly from Ford Motor Company, delivered in the same reusable dunnage Ford uses to ship engines to its own Flat Rock Assembly Plant.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Authenticity</div>
-          <p class="sheet__v">A Revology is restored from an original donor Mustang to Revology&rsquo;s specifications, then sold and titled as a used vehicle, the same way as any other used vehicle. It may be registered in California on that same basis.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Licensing</div>
-          <p class="sheet__v">Revology was the first company ever authorized by Ford to build new reproduction 1965&ndash;1970 Mustang rolling chassis, under license from 2015 to 2024. When Ford changed its licensing policy for road-going vehicles, Revology shifted to restoring donor cars to the same specification, and continues to work closely with Ford on other projects. Revology remains in good standing with Shelby American and is one of only four companies worldwide authorized to build licensed reproduction Shelby GTs.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Safety engineering</div>
-          <p class="sheet__v">The platform carries passive safety improvements the original cars never had, including three-point driver and passenger seat belts, a dual-circuit braking system, a collapsible steering shaft, and a fuel-pump inertia switch.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Warranty</div>
-          <p class="sheet__v">The &ldquo;1-2-5&rdquo; New Vehicle Limited Warranty: 1 year bumper-to-bumper, 2 years powertrain, 5 years body corrosion coverage, with no mileage limit on any of it. Warranty work can be completed at any participating Ford dealership in the U.S.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Serviceability</div>
-          <p class="sheet__v">A Revology Mustang can be serviced at any Ford dealership, and at virtually any independent shop capable of servicing both early and late-model Mustangs. That is a deliberate outcome of the OEM-component strategy, not a coincidence.</p>
-        </div>
-        <div class="sheet__row">
-          <div class="sheet__k">Value retention</div>
-          <p class="sheet__v">Most Revology Mustangs and Shelby GTs sell through the Certified Pre-Owned program and typically retain 90&ndash;110% of their original price after two years and 2,500 miles. Resale value is a function of supply and demand, and Revology will always be demand-driven, not supply-driven.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== TEAM ==================== -->
-  <section class="band band--ink" id="team">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>The Team Behind Every Revology Mustang</h2>
-        <hr class="h-rule">
-        <p class="lede">Revology Cars is led by an experienced management team and supported by automotive specialists across engineering, manufacturing, sales, service, and operations. Founded by Tom Scarpello, Revology brings together professionals with backgrounds in vehicle development, automotive manufacturing, product planning, and operational excellence. Together, the team works to design, engineer, and build modern interpretations of classic Mustang and Shelby GT vehicles while maintaining the company&rsquo;s focus on craftsmanship, quality, and innovation.</p>
-      </div>
-
-      <div class="team">
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4085-2-768x768.jpeg" alt="Portrait of Tom Scarpello" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Tom Scarpello</h3>
-          <div class="member__r">Founder &amp; CEO</div>
-          <p>A career spent entirely in the automotive industry &mdash; manufacturing, marketing, sales and product planning for Ford and Nissan in the U.S. and overseas. Ran Ford&rsquo;s Special Vehicle Team, 1998&ndash;2004. Favorite car? &ldquo;The one we will build tomorrow.&rdquo;</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4191-1-768x768.jpeg" alt="Portrait of Yoshi Amano" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Yoshi Amano</h3>
-          <div class="member__r">VP, Marketing, Sales &amp; Service</div>
-          <p>A native of Tokyo, Yoshi honed her marketing and sales chops at Hitachi, Nissan Motor Company and Wieden+Kennedy, the agency best known for &ldquo;Just Do It&rdquo;.</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4093-768x768.jpeg" alt="Portrait of Aaron Wright" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Aaron Wright</h3>
-          <div class="member__r">Chief Engineer, Product Development</div>
-          <p>Ten years as an engineer at Honda before joining Revology as chief engineer. Dream car: a Porsche 930 Turbo. Weekends are for jogging, mountain bikes and his two young sons.</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4128-768x768.jpeg" alt="Portrait of Jesus Rangel" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Jesus Rangel</h3>
-          <div class="member__r">Plant Manager</div>
-          <p>Eighteen years in the automotive industry, primarily in body and paint. Favorite car: the 1964 Chevrolet Impala.</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4147-768x768.jpeg" alt="Portrait of Phil Axsom" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Phil Axsom</h3>
-          <div class="member__r">Director, Operational Excellence</div>
-          <p>A Central Florida native working across engineering and manufacturing operations, focused on continuous improvement, change management and digital transformation.</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4100-768x768.jpeg" alt="Portrait of Jan Van der Westhuizen" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Jan Van der Westhuizen</h3>
-          <div class="member__r">Controller, Finance &amp; Administration</div>
-          <p>Born and raised in South Africa, Jan built his finance career across three countries and more than a decade in the automotive and logistics industries.</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2025/06/dr1a4113-768x768.jpeg" alt="Portrait of Jamie Spindler" width="768" height="768" loading="lazy"></div>
-          <h3 class="member__n">Jamie Spindler</h3>
-          <div class="member__r">Manager, Human Resources</div>
-          <p>Over ten years with global manufacturers including Magna, Hydro and STERIS. A Florida native who hikes and travels. Favorite car: her dad&rsquo;s 1965 Dodge Power Wagon.</p>
-        </article>
-        <article class="member">
-          <div class="member__ph"><img src="https://revologycars.com/wp-content/uploads/2026/04/revology-all-staff-2026-1.jpg" alt="The full Revology team assembled outside the Orlando factory with three Mustangs" width="1350" height="900" loading="lazy"></div>
-          <h3 class="member__n">The Whole Crew</h3>
-          <div class="member__r">170 people, one factory</div>
-          <p>Engineers, fabricators, painters, trimmers, assemblers and quality technicians. Every Revology passes through their hands before it reaches a driveway.</p>
-        </article>
-      </div>
-
-      <div class="btn-row btn-row--center">
-        <a class="btn btn--ghost" href="https://revologycars.com/meet-the-team/">Meet the Management Team</a>
-        <a class="btn btn--ghost" href="https://revologycars.com/careers/">Careers at Revology</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== LOCATION ==================== -->
-  <section class="band band--ink3" id="location">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>See Where Your Revology Mustang Is Built</h2>
-        <hr class="h-rule">
-      </div>
-
-      <div class="loc">
-        <div>
-          <div class="body">
-            <p>Every Revology vehicle is designed and built at our headquarters and manufacturing facility in Orlando, Florida. Located on Commerce Park Drive, our facility brings engineering, body fabrication, paint, trim, final assembly, and quality validation together under one roof.</p>
-            <p>Our 65,757-square-foot manufacturing facility is designed to support the complete vehicle production process, with dedicated systems for maintaining a controlled and efficient working environment. At any given time, multiple Revology vehicles move through production as our team applies careful engineering, craftsmanship, and quality-focused manufacturing practices.</p>
-            <p>From the first stages of development to final assembly, our Orlando facility is where classic Mustang and Shelby GT heritage is combined with modern automotive engineering. Clients can collect their vehicle at the factory or arrange enclosed transport, with a detailed walkthrough of the vehicle&rsquo;s features provided during handover.</p>
-          </div>
-
-          <address class="addr">
-            <dl>
-              <dt>Factory</dt>
-              <dd>2252 Commerce Park Drive, Suite 350<br>Orlando, FL 32819, USA</dd>
-              <dt>Phone</dt>
-              <dd><a href="tel:+18009744463">+1 (800) 974-4463</a></dd>
-              <dt>Email</dt>
-              <dd><a href="mailto:info@revologycars.com">info@revologycars.com</a></dd>
-            </dl>
-          </address>
-
-        </div>
-
-        <div class="loc__media">
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/R7cSaljHbiM?rel=0"
-                    title="Revology Cars: Inside the Factory"
-                    loading="lazy" allowfullscreen
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-          </div>
-          <div class="loc__map">
-            <iframe src="https://www.google.com/maps?q=2252+Commerce+Park+Drive+Suite+350,+Orlando,+FL+32819&amp;z=15&amp;output=embed"
-                    title="Map showing Revology Cars at 2252 Commerce Park Drive, Orlando, Florida"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== CTA ==================== -->
-  <section class="band cta" id="build">
-    <div class="cta__bg">
-      <img src="https://revologycars.com/wp-content/uploads/2025/11/revology-1969-mustang-boss-429-title.jpg"
-           alt="A blue Revology 1969 Mustang Boss 429 parked outside the Orlando factory"
-           width="1210" height="1000" loading="lazy">
-    </div>
-    <div class="cta__scrim"></div>
-    <div class="wrap cta__in">
-      <div class="cta__copy">
-          <h2>Build Your Custom Revology Mustang</h2>
-          <hr class="h-rule">
-          <p class="lede">Choose from our range of Mustang and Shelby GT models and create a personalized vehicle specification through our guided ordering process.</p>
-
-          <ol class="steps">
-            <li>
-              <span class="steps__t">Consult and specify.</span>
-              <p class="steps__d">Call or email us, and the client relations team schedules a consultation to finalize your Mustang or Shelby GT model, exterior color, interior trim, and option packages.</p>
-            </li>
-            <li>
-              <span class="steps__t">Confirm and secure.</span>
-              <p class="steps__d">Initial the order confirmation sheet, sign the sales agreement and submit the first payment. Your car receives an order number and an estimated start date.</p>
-            </li>
-            <li>
-              <span class="steps__t">Watch it get built.</span>
-              <p class="steps__d">At production start your car receives a production number and you receive a login to the owner portal, where photos track its progress through the line. Payment is made in three equal installments; the last is due at delivery.</p>
-            </li>
-          </ol>
-
           <div class="btn-row">
-            <a class="btn btn--accent" href="https://revologycars.com/contact-us/">Start Your Build</a>
-            <a class="btn btn--ghost" href="https://revologycars.com/how-to-order/">How to Order</a>
+            <a class="btn btn--ghost" href="/author/tom-scarpello">Read His Profile</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ELSEWHERE ==================== -->
+  <section class="band band--ink3" id="elsewhere">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everywhere Else on revologycars.com</h2>
+        <hr class="h-rule">
+      </div>
+      <div class="elsewhere">
+        <a class="el" href="https://revologycars.com/#models">
+          <h3>Models</h3>
+          <p>The current Mustang and Shelby GT line</p>
+        </a>
+        <a class="el" href="https://revologycars.com/inventory/">
+          <h3>Inventory</h3>
+          <p>Cars available now</p>
+        </a>
+        <a class="el" href="https://revologycars.com/registry/">
+          <h3>Registry</h3>
+          <p>Every production car, by number</p>
+        </a>
+        <a class="el" href="https://revologycars.com/how-to-order/">
+          <h3>How to Order</h3>
+          <p>The ordering process, step by step</p>
+        </a>
+        <a class="el" href="https://revologycars.com/meet-the-team/">
+          <h3>Management Team</h3>
+          <p>The people running the plant</p>
+        </a>
+        <a class="el" href="https://revologycars.com/careers/">
+          <h3>Careers</h3>
+          <p>Working at the Orlando factory</p>
+        </a>
+        <a class="el" href="https://revologycars.com/faq/">
+          <h3>FAQ</h3>
+          <p>Warranty, safety, servicing, shipping</p>
+        </a>
+        <a class="el" href="https://revologycars.com/contact-us/">
+          <h3>Contact Us</h3>
+          <p>Client relations, by phone or email</p>
+        </a>
       </div>
     </div>
   </section>
@@ -921,7 +591,7 @@ figcaption{
         <img src="https://revologycars.com/wp-content/uploads/2024/04/revolog-logo-white.svg" alt="Revology Cars" width="130" height="22">
       </a>
       <nav class="foot-links" aria-label="Footer">
-        <a href="/company">Company Hub</a>
+        <a href="/">Company Hub</a>
         <a href="/about-us">About Us</a>
         <a href="/author/tom-scarpello">Tom Scarpello</a>
         <a href="/testimonials">Testimonials</a>
@@ -940,12 +610,61 @@ figcaption{
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "AboutPage",
-      "@id": "https://revologycars.com/about-us/#webpage",
-      "url": "https://revologycars.com/about-us/",
-      "name": "About Revology: Redefining the Classic Mustang",
-      "description": "Revology Cars re-engineers 1967-1970 Ford Mustangs and Shelby GTs in a 65,757 sq ft Orlando factory.",
-      "about": { "@id": "https://revologycars.com/#organization" }
+      "@type": "CollectionPage",
+      "@id": "https://revologycars.com/company/#webpage",
+      "url": "https://revologycars.com/company/",
+      "name": "Revology Cars: Company Hub",
+      "description": "One index to Revology Cars: the company and how the cars are engineered, founder Tom Scarpello, and 42 owner testimonials published in full.",
+      "about": {
+        "@id": "https://revologycars.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://revologycars.com/company/#pages"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://revologycars.com/company/#pages",
+      "name": "Revology Cars company pages",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "About Revology: Redefining the Classic Mustang",
+          "url": "https://revologycars.com/about-us/",
+          "item": {
+            "@type": "AboutPage",
+            "@id": "https://revologycars.com/about-us/#webpage",
+            "url": "https://revologycars.com/about-us/",
+            "name": "About Revology: Redefining the Classic Mustang"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tom Scarpello, Founder & CEO of Revology Cars",
+          "url": "https://revologycars.com/author/tom-scarpello/",
+          "item": {
+            "@type": "ProfilePage",
+            "@id": "https://revologycars.com/author/tom-scarpello/#webpage",
+            "url": "https://revologycars.com/author/tom-scarpello/",
+            "name": "Tom Scarpello, Founder & CEO of Revology Cars"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Revology Cars Testimonials",
+          "url": "https://revologycars.com/testimonials/",
+          "item": {
+            "@type": "CollectionPage",
+            "@id": "https://revologycars.com/testimonials/#webpage",
+            "url": "https://revologycars.com/testimonials/",
+            "name": "Revology Cars Testimonials"
+          }
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -957,11 +676,12 @@ figcaption{
       "founder": {
         "@type": "Person",
         "@id": "https://revologycars.com/author/tom-scarpello/#person",
-        "name": "Tom Scarpello",
-        "jobTitle": "Founder & CEO",
-        "url": "https://revologycars.com/author/tom-scarpello/"
+        "name": "Tom Scarpello"
       },
-      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 170 },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 170
+      },
       "telephone": "+1-800-974-4463",
       "email": "info@revologycars.com",
       "address": {
@@ -978,6 +698,23 @@ figcaption{
         "https://www.linkedin.com/company/revology-cars-inc-",
         "https://www.youtube.com/channel/UCDb-nvKkLQyF4EDb5J_b-Aw",
         "https://www.pinterest.com/revologycars"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://revologycars.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Company",
+          "item": "https://revologycars.com/company/"
+        }
       ]
     }
   ]
