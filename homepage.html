@@ -373,8 +373,47 @@ span.elementor-button-text {
 }
 
 </style>
+
+<style id="revq-style">
+/* ===== SUGGESTION OVERLAY - delete this block and the revq-on body class to ship ===== */
+body.revq-on .revq-del{
+  color:#188038;background:#E6F4EA;
+  text-decoration:line-through;text-decoration-thickness:2px;
+  -webkit-text-decoration-color:#188038;text-decoration-color:#188038;
+}
+body.revq-on .revq-add{
+  color:#188038;background:#E6F4EA;
+  text-decoration:underline;text-decoration-thickness:2px;
+  text-underline-offset:3px;
+  -webkit-text-decoration-color:#188038;text-decoration-color:#188038;
+}
+/* the standfirsts are whole-paragraph insertions: the inline colours have to
+   beat the white set on the widget container */
+body.revq-on .revq-add p,
+body.revq-on p.revq-add,
+body.revq-on .revq-add strong{color:#188038 !important}
+body.revq-on .revq-block{display:block;background:#E6F4EA;padding:.35em .6em}
+
+#revq-legend{
+  position:sticky;top:0;z-index:99998;
+  background:#E6F4EA;border-bottom:2px solid #188038;
+  font-family:Arial,Helvetica,sans-serif;color:#0B3D1C;
+  padding:13px 20px;line-height:1.55;
+}
+#revq-legend b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#188038}
+#revq-legend p{margin:.35rem 0 0;font-size:13px;max-width:none;color:#0B3D1C}
+#revq-legend s{color:#188038;text-decoration-thickness:2px}
+#revq-legend u{color:#188038;text-underline-offset:3px;text-decoration-thickness:2px}
+body:not(.revq-on) #revq-legend{display:none}
+@media print{#revq-legend{position:static}}
+</style>
 </head>
-<body class="home wp-singular page-template-default page page-id-37172 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-37123 elementor-page elementor-page-37172 elementor-page-38392 elementor-page-37168">
+<body class="revq-on home wp-singular page-template-default page page-id-37172 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-37123 elementor-page elementor-page-37172 elementor-page-38392 elementor-page-37168">
+<div id="revq-legend">
+  <b>Suggested changes &mdash; not yet live</b>
+  <p><s>Struck through</s> is wording removed. <u>Underlined</u> is wording added. Anything unmarked is the live page, unchanged.</p>
+</div>
+
 
 
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -1928,7 +1967,7 @@ jQuery(document).ready(function() {
 				</div>
 				<div class="elementor-element elementor-element-c7a5faa elementor-widget elementor-widget-text-editor" data-id="c7a5faa" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									<p>Nobody builds <strong>classic Mustangs</strong> like Revology Cars. Since 2014, we have been dedicated exclusively to the development and manufacturing of the world’s best engineered and best built reproductions and restorations of 1967 to 1970 Mustangs and Shelby GTs. This is all we do.</p><p>Featuring modern technology, materials, and manufacturing methods, Revology vehicles are precisely engineered to deliver not only superior performance, but also improved reliability, drivability, comfort, and safety, compared to their 1960s counterparts.</p><p>The result is more than a machine—it is a reflection of you and what makes you unique. It is a symbol of the life you’ve worked hard to create. Your Revology Mustang ignites a flicker of joy every time you drive it. </p><p>Revology Cars.  We&#8217;re part of your journey.  </p>								</div>
+									<p>Nobody builds <strong class="revq-add">classic Mustangs</strong> like Revology Cars. Since 2014, we have been dedicated exclusively to the development and manufacturing of the world’s best engineered and best built reproductions and restorations of 1967 to 1970 Mustangs and Shelby GTs. This is all we do.</p><p>Featuring modern technology, materials, and manufacturing methods, Revology vehicles are precisely engineered to deliver not only superior performance, but also improved reliability, drivability, comfort, and safety, compared to their 1960s counterparts.</p><p>The result is more than a machine—it is a reflection of you and what makes you unique. It is a symbol of the life you’ve worked hard to create. Your Revology Mustang ignites a flicker of joy every time you drive it. </p><p>Revology Cars.  We&#8217;re part of your journey.  </p>								</div>
 				</div>
 				</div>
 					</div>
@@ -2580,11 +2619,11 @@ jQuery(document).ready(function() {
 					<div class="e-con-inner">
 				<div data-dce-title-color="#FFFFFF" class="elementor-element elementor-element-c19751a elementor-widget elementor-widget-heading" data-id="c19751a" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Revology Classic Mustang Testimonials</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default"><span class="revq-del">Testimonials</span> <span class="revq-add">Revology Classic Mustang Testimonials</span></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-t3st1mi elementor-widget elementor-widget-text-editor" data-id="t3st1mi" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container" style="color:#FFFFFF;margin:1rem 0rem 0rem 0rem">
-									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)">Hear from Revology owners about their experience with our restored original 1967–1970 Ford Mustang and Shelby GT models. These owner stories share firsthand experiences with Revology craftsmanship, modern engineering, and the unique ownership experience behind every classic Mustang.</p>								</div>
+									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)"><span class="revq-add">Hear from Revology owners about their experience with our restored original 1967–1970 Ford Mustang and Shelby GT models. These owner stories share firsthand experiences with Revology craftsmanship, modern engineering, and the unique ownership experience behind every classic Mustang.</span></p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-40da5f2 elementor-grid-1 elementor-widget__width-inherit elementor-grid-tablet-1 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="40da5f2" data-element_type="widget" data-e-type="widget" data-settings="{&quot;template_id&quot;:37204,&quot;columns&quot;:1,&quot;columns_tablet&quot;:1,&quot;_skin&quot;:&quot;post&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
 				<div class="elementor-widget-container">
@@ -2711,11 +2750,11 @@ Enjoying the ride.								</div>
 					<div class="e-con-inner">
 				<div data-dce-title-color="#FFFFFF" class="elementor-element elementor-element-f08583e elementor-widget elementor-widget-heading" data-id="f08583e" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Our Classic Mustang Inventory</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default"><span class="revq-del">INVENTORY</span> <span class="revq-add">Our Classic Mustang Inventory</span></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-1nv3nty elementor-widget elementor-widget-text-editor" data-id="1nv3nty" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container" style="color:#FFFFFF;margin:1rem 0rem 0rem 0rem">
-									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)">Explore available Revology Mustang and Shelby GT vehicles, featuring modern interpretations of iconic 1967–1970 classic Mustang models that combine original design heritage with contemporary engineering, technology, and craftsmanship.</p>								</div>
+									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)"><span class="revq-add">Explore available Revology Mustang and Shelby GT vehicles, featuring modern interpretations of iconic 1967–1970 classic Mustang models that combine original design heritage with contemporary engineering, technology, and craftsmanship.</span></p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-3bb093b elementor-grid-3 elementor-grid-tablet-1 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="3bb093b" data-element_type="widget" data-e-type="widget" data-settings="{&quot;template_id&quot;:&quot;45423&quot;,&quot;columns&quot;:3,&quot;pagination_type&quot;:&quot;numbers&quot;,&quot;columns_tablet&quot;:1,&quot;_skin&quot;:&quot;post&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
 				<div class="elementor-widget-container">
@@ -2799,11 +2838,11 @@ Enjoying the ride.								</div>
 					<div class="e-con-inner">
 				<div data-dce-title-color="#FFFFFF" class="elementor-element elementor-element-6c7a864 elementor-widget elementor-widget-heading" data-id="6c7a864" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Revology Certified Pre-Owned Mustangs</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default"><span class="revq-del">CERTIFIED PRE-OWNED</span> <span class="revq-add">Revology Certified Pre-Owned Mustangs</span></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-cp0wn3d elementor-widget elementor-widget-text-editor" data-id="cp0wn3d" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container" style="color:#FFFFFF;margin:1rem 0rem 0rem 0rem">
-									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)">Explore available Certified Pre-Owned Revology Mustang and Shelby GT vehicles, giving enthusiasts the opportunity to own a professionally restored classic Mustang with Revology’s modern engineering approach.</p>								</div>
+									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)"><span class="revq-add">Explore available Certified Pre-Owned Revology Mustang and Shelby GT vehicles, giving enthusiasts the opportunity to own a professionally restored classic Mustang with Revology’s modern engineering approach.</span></p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-dbfd1dc elementor-grid-3 elementor-grid-tablet-1 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="dbfd1dc" data-element_type="widget" data-e-type="widget" data-settings="{&quot;template_id&quot;:&quot;45426&quot;,&quot;columns&quot;:3,&quot;pagination_type&quot;:&quot;numbers&quot;,&quot;columns_tablet&quot;:1,&quot;_skin&quot;:&quot;post&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
 				<div class="elementor-widget-container">
@@ -2887,11 +2926,11 @@ Enjoying the ride.								</div>
 					<div class="e-con-inner">
 				<div data-dce-title-color="#FFFFFF" class="elementor-element elementor-element-93118bb elementor-widget elementor-widget-heading" data-id="93118bb" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Revology Classic Mustang Registry</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default"><span class="revq-del">REGISTRY</span> <span class="revq-add">Revology Classic Mustang Registry</span></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-r3g1stry elementor-widget elementor-widget-text-editor" data-id="r3g1stry" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container" style="color:#FFFFFF;margin:1rem 0rem 0rem 0rem">
-									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)">View the collection of completed Revology classic Ford Mustangs. Each restored automobile represents a modern interpretation of iconic old Mustang designs, combining classic heritage with Revology’s engineering approach, craftsmanship, and contemporary technology.</p>								</div>
+									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)"><span class="revq-add">View the collection of completed Revology classic Ford Mustangs. Each restored automobile represents a modern interpretation of iconic old Mustang designs, combining classic heritage with Revology’s engineering approach, craftsmanship, and contemporary technology.</span></p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-557dc0f elementor-grid-3 elementor-grid-tablet-1 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="557dc0f" data-element_type="widget" data-e-type="widget" data-settings="{&quot;template_id&quot;:37197,&quot;columns&quot;:3,&quot;pagination_type&quot;:&quot;numbers&quot;,&quot;columns_tablet&quot;:1,&quot;_skin&quot;:&quot;post&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;pagination_load_type&quot;:&quot;page_reload&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
 				<div class="elementor-widget-container">
@@ -2975,11 +3014,11 @@ Enjoying the ride.								</div>
 					<div class="e-con-inner">
 				<div data-dce-title-color="#FFFFFF" class="elementor-element elementor-element-5756404 elementor-widget elementor-widget-heading" data-id="5756404" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Revology Cars Media Coverage</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default"><span class="revq-del">Media Coverage</span> <span class="revq-add">Revology Cars Media Coverage</span></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-m3d1ac0 elementor-widget elementor-widget-text-editor" data-id="m3d1ac0" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container" style="color:#FFFFFF;margin:1rem 0rem 0rem 0rem">
-									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)">Read featured articles, interviews, and automotive publications covering Revology Cars, our engineering approach, and modern interpretations of iconic classic Mustang and Shelby GT vehicles.</p>								</div>
+									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)"><span class="revq-add">Read featured articles, interviews, and automotive publications covering Revology Cars, our engineering approach, and modern interpretations of iconic classic Mustang and Shelby GT vehicles.</span></p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-092de35 elementor-grid-tablet-1 elementor-grid-3 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="092de35" data-element_type="widget" data-e-type="widget" data-settings="{&quot;template_id&quot;:&quot;38137&quot;,&quot;columns_tablet&quot;:1,&quot;_skin&quot;:&quot;post&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
 				<div class="elementor-widget-container">
@@ -3127,11 +3166,11 @@ Enjoying the ride.								</div>
 					<div class="e-con-inner">
 				<div data-dce-title-color="#FFFFFF" class="elementor-element elementor-element-af01082 elementor-widget elementor-widget-heading" data-id="af01082" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Revology Cars News &amp; Blogs</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default"><span class="revq-del">News &amp; Blogs</span> <span class="revq-add">Revology Cars News &amp; Blogs</span></h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-n3wsblg elementor-widget elementor-widget-text-editor" data-id="n3wsblg" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container" style="color:#FFFFFF;margin:1rem 0rem 0rem 0rem">
-									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)">Stay updated with the latest Revology Cars news, announcements, and insights covering new models, automotive stories, company updates, and the engineering behind classic Mustang and Shelby GT vehicles.</p>								</div>
+									<p style="font-family:'GT America Standard', Sans-serif;font-size:clamp(1.2rem, 1.16rem + 0.2vw, 1.4rem)"><span class="revq-add">Stay updated with the latest Revology Cars news, announcements, and insights covering new models, automotive stories, company updates, and the engineering behind classic Mustang and Shelby GT vehicles.</span></p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-5237427 elementor-grid-tablet-1 elementor-grid-3 elementor-grid-mobile-1 elementor-widget elementor-widget-loop-grid" data-id="5237427" data-element_type="widget" data-e-type="widget" data-settings="{&quot;template_id&quot;:&quot;37206&quot;,&quot;columns_tablet&quot;:1,&quot;_skin&quot;:&quot;post&quot;,&quot;columns&quot;:&quot;3&quot;,&quot;columns_mobile&quot;:&quot;1&quot;,&quot;edit_handle_selector&quot;:&quot;[data-elementor-type=\&quot;loop-item\&quot;]&quot;,&quot;row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="loop-grid.post">
 				<div class="elementor-widget-container">
