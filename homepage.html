@@ -393,6 +393,17 @@ body.revq-on .revq-add p,
 body.revq-on p.revq-add,
 body.revq-on .revq-add strong{color:#188038 !important}
 body.revq-on .revq-block{display:block;background:#E6F4EA;padding:.35em .6em}
+/* formatting-only change: same ground, no strike, no underline */
+body.revq-on .revq-fmt{color:#188038 !important;background:#E6F4EA}
+body.revq-on .revq-note{
+  display:inline-block;vertical-align:.3em;
+  background:#188038;color:#FFFFFF;
+  font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
+  padding:3px 7px;border-radius:99px;margin-left:.4em;line-height:1;
+  text-decoration:none;
+}
+body:not(.revq-on) .revq-note{display:none}
 
 #revq-legend{
   position:sticky;top:0;z-index:99998;
@@ -411,7 +422,7 @@ body:not(.revq-on) #revq-legend{display:none}
 <body class="revq-on home wp-singular page-template-default page page-id-37172 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-37123 elementor-page elementor-page-37172 elementor-page-38392 elementor-page-37168">
 <div id="revq-legend">
   <b>Suggested changes &mdash; not yet live</b>
-  <p><s>Struck through</s> is wording removed. <u>Underlined</u> is wording added. Anything unmarked is the live page, unchanged.</p>
+  <p><s>Struck through</s> is wording removed. <u>Underlined</u> is wording added. A green tag marks a formatting change, where the words already existed. Anything unmarked is the live page, unchanged.</p>
 </div>
 
 
@@ -1967,7 +1978,7 @@ jQuery(document).ready(function() {
 				</div>
 				<div class="elementor-element elementor-element-c7a5faa elementor-widget elementor-widget-text-editor" data-id="c7a5faa" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									<p>Nobody builds <strong class="revq-add">classic Mustangs</strong> like Revology Cars. Since 2014, we have been dedicated exclusively to the development and manufacturing of the world’s best engineered and best built reproductions and restorations of 1967 to 1970 Mustangs and Shelby GTs. This is all we do.</p><p>Featuring modern technology, materials, and manufacturing methods, Revology vehicles are precisely engineered to deliver not only superior performance, but also improved reliability, drivability, comfort, and safety, compared to their 1960s counterparts.</p><p>The result is more than a machine—it is a reflection of you and what makes you unique. It is a symbol of the life you’ve worked hard to create. Your Revology Mustang ignites a flicker of joy every time you drive it. </p><p>Revology Cars.  We&#8217;re part of your journey.  </p>								</div>
+									<p>Nobody builds <strong class="revq-fmt">classic Mustangs</strong><span class="revq-note">now bold</span> like Revology Cars. Since 2014, we have been dedicated exclusively to the development and manufacturing of the world’s best engineered and best built reproductions and restorations of 1967 to 1970 Mustangs and Shelby GTs. This is all we do.</p><p>Featuring modern technology, materials, and manufacturing methods, Revology vehicles are precisely engineered to deliver not only superior performance, but also improved reliability, drivability, comfort, and safety, compared to their 1960s counterparts.</p><p>The result is more than a machine—it is a reflection of you and what makes you unique. It is a symbol of the life you’ve worked hard to create. Your Revology Mustang ignites a flicker of joy every time you drive it. </p><p>Revology Cars.  We&#8217;re part of your journey.  </p>								</div>
 				</div>
 				</div>
 					</div>
