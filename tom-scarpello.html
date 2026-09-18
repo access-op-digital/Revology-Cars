@@ -219,17 +219,6 @@ figcaption{
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .band--bone .video{border-color:var(--rule-bone)}
 
-/* ---------- Final CTA banner ---------- */
-.final{padding-block:clamp(2.75rem,5vw,4.25rem)}
-.final__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.75rem 3rem}
-.final__copy{flex:1 1 32rem;min-width:0}
-.final__t{
-  font-family:var(--f-display);font-weight:700;text-transform:uppercase;line-height:1.02;
-  font-size:clamp(1.6rem,1.2rem + 1.6vw,2.5rem);margin:0;max-width:none;text-wrap:pretty;
-}
-.final__d{margin:.75rem 0 0;color:var(--mute-on-bone);max-width:58ch}
-.final__act{display:flex;align-items:center;flex-wrap:wrap;gap:.9rem}
-
 /* ---------- Footer ---------- */
 .site-foot{background:#0F0F0F;border-top:1px solid var(--rule-dark);padding-block:3rem}
 .site-foot__in{display:flex;flex-wrap:wrap;gap:1.75rem 3rem;align-items:center;justify-content:space-between}
@@ -421,42 +410,148 @@ figcaption{
   color:var(--mute-on-dark);line-height:1.7;
 }
 
-/* ---------- Press list ---------- */
-/* the closing banner now follows the bone Interviews section directly, so
-   it needs a rule to read as its own band */
-.final.band--bone{border-top:1px solid var(--rule-bone)}
-
-/* ---------- Press log ---------- */
-/* Outlet first, at display size: on a page about authority the masthead is
-   the signal, so it leads the row rather than sitting under the headline.
-   Full-width rows also stop the long podcast titles from wrapping five
-   deep, which is what they did in a third-width card. */
-.plog{border-top:2px solid var(--ink)}
-.plog__row{
-  display:grid;grid-template-columns:minmax(9rem,.26fr) 1fr;gap:.45rem clamp(1.5rem,3vw,2.75rem);
-  padding:clamp(1.15rem,2vw,1.5rem) 0;border-bottom:1px solid var(--rule-bone);
-  text-decoration:none;align-items:baseline;
-  transition:background .2s ease;
+/* ---------- Press cards ---------- */
+/* Cards, not rows: each appearance now carries the publisher's own mark, and
+   a logo needs a block of its own to sit in. The masthead still leads, the
+   logo above it doing the work the display-size outlet name did alone in the
+   old list.
+   The bay is a fixed height with object-fit:contain, because the six marks
+   arrive in two shapes: wide wordmarks (The Detroit News at 7:1, The Muscle
+   Car Place at 3:1) and square channel art. Capping the wordmarks shorter
+   than the square marks evens out their optical weight, and one bay height
+   keeps the titles starting on the same line across a row.
+   Every mark is the publisher's own file, served from the publisher. If one
+   ever stops resolving the bay removes itself rather than leave a broken
+   frame or stand in a substitute (the onerror drops the bay, not just the
+   image, so the card closes up cleanly). */
+/* Card order is by content length, not by date or prestige. A row stretches
+   every card to the height of its tallest, so a 296-character card beside a
+   77-character one left the short card with a band of dead space above its
+   footer. Grouping similar lengths per row cut the worst within-row spread
+   from 219 characters to 100. Row order then runs shortest to longest, which
+   also lets The Detroit News lead. Changing a title or quote can therefore
+   put a card in the wrong row: re-measure title+quote length before moving
+   one. The two Muscle Car Place cards are also kept off the same column so
+   their shared logo never stacks. */
+.pcards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(1rem,1.8vw,1.5rem);margin-top:clamp(2rem,4vw,3rem);
 }
-.plog__row:hover{background:rgba(21,21,21,.035)}
-.plog__pub{
+@media (max-width:980px){.pcards{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.pcards{grid-template-columns:1fr}}
+.pcard{
+  display:flex;flex-direction:column;
+  background:#FFFDF7;
+  border:1px solid var(--rule-bone);border-top:3px solid var(--accent);
+  box-shadow:0 2px 10px rgba(21,21,21,.05);
+  padding:clamp(1.1rem,1.7vw,1.35rem);
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(21,21,21,.1)}
+.pcard__plate{
+  display:flex;align-items:center;justify-content:flex-start;
+  height:72px;margin-bottom:1rem;
+}
+.pcard__logo{display:block;width:auto;max-width:100%;object-fit:contain}
+/* square channel art and podcast covers carry less width than a wordmark,
+   so they get the extra height back */
+.pcard__logo--mark{max-height:58px}
+.pcard__logo--wordmark{max-height:42px}
+.pcard__pub{
   font-family:var(--f-display);font-weight:700;text-transform:uppercase;
-  font-size:clamp(.95rem,.85rem + .4vw,1.25rem);line-height:1.12;
+  font-size:clamp(.9rem,.8rem + .35vw,1.1rem);line-height:1.12;
   color:var(--ink);text-wrap:balance;
+  padding-bottom:.7rem;margin-bottom:.7rem;border-bottom:1px solid var(--rule-bone);
 }
-.plog__title{display:block;font-size:1.05rem;line-height:1.5;color:var(--ink);text-wrap:pretty}
-.plog__row:hover .plog__title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-.plog__meta{
-  display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin-top:.6rem;
+.pcard__title{display:block;font-size:1rem;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.pcard:hover .pcard__title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+/* Tom's own words from that particular piece, never a line from elsewhere:
+   the quote is the reason to open the card, so it sits between the title and
+   the footer in the page's existing pull-quote language (display face, orange
+   rule) held one step below the title's weight so it reads as evidence rather
+   than as the headline. Cards whose source publishes no transcript simply
+   have no quote span, the same way a missing logo removes its own bay. */
+.pcard__quote{
+  display:block;margin-top:.9rem;padding-left:.9rem;
+  border-left:3px solid var(--accent);
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(.92rem,.86rem + .28vw,1.05rem);line-height:1.26;
+  color:var(--ink);text-wrap:pretty;
+}
+.pcard__meta{
+  display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;
+  margin-top:auto;padding-top:1rem;
   font-family:var(--f-label);font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;
   color:var(--accent-ink);line-height:1.6;
 }
-.plog__meta span{transition:transform .2s ease}
-.plog__row:hover .plog__meta span{transform:translateX(3px)}
-@media (max-width:700px){.plog__row{grid-template-columns:1fr;gap:.35rem}}
+.pcard__meta span{transition:transform .2s ease}
+.pcard:hover .pcard__meta span{transform:translateX(3px)}
 
-.press__note{margin:1.75rem 0 0;font-size:.88rem;line-height:1.7;color:var(--mute-on-bone);max-width:70ch}
-
+/* ---------- Latest reads ---------- */
+/* Revology's own blog-card pattern: featured image, date, title, truncated
+   standfirst. The band is dark rather than bone because the press grid above
+   it is bone, and two bone bands running together lost the alternation the
+   rest of the page keeps -- it also puts these cards on the same ground the
+   live site shows them on.
+   The image box is a fixed 3:2 with object-fit:cover. The source files are
+   768x512 (already 3:2), so nothing is actually cropped today, but the box
+   holds the grid steady if a future post arrives at another ratio. The
+   standfirst is line-clamped rather than truncated in the markup, so the
+   excerpt stays whole for anyone reading the source or a screen reader. */
+.reads{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(1.5rem,2.5vw,2.25rem);margin-top:clamp(2rem,4vw,3rem);
+}
+@media (max-width:980px){.reads{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.reads{grid-template-columns:1fr}}
+.read{display:flex;flex-direction:column;text-decoration:none}
+.read__shot{
+  display:block;width:100%;aspect-ratio:3/2;margin-bottom:1.1rem;
+  background:#0F0F0F;border:1px solid var(--rule-dark);overflow:hidden;
+}
+.read__shot img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  transition:transform .35s ease;
+}
+.read:hover .read__shot img{transform:scale(1.03)}
+.read__date{
+  font-family:var(--f-label);font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--accent);line-height:1.6;margin-bottom:.6rem;
+}
+.read__title{
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.18;
+  color:var(--white);text-wrap:pretty;
+}
+.read:hover .read__title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+/* margin-bottom, not padding on the cue: margin-top:auto below pushes the
+   button to the card floor but guarantees no minimum gap, so on a card whose
+   text happens to fill the height the button ended up touching the
+   standfirst. The gap now lives on the text and survives either case. */
+.read__standfirst{
+  margin-top:.7rem;margin-bottom:clamp(1.4rem,2.2vw,1.85rem);
+  font-size:.95rem;line-height:1.6;color:var(--mute-on-dark);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+/* The cue is a real button, not a text link: it is the only thing on the card
+   that looks clickable at a glance, and the cards sit on a dark ground where
+   a small orange caption read as decoration. align-self keeps it to its own
+   width instead of stretching the full column, and margin-top:auto drops it
+   to the card floor so the three buttons line up across a row whatever the
+   titles do above them. */
+.read__cue{
+  align-self:flex-start;
+  display:inline-flex;align-items:center;gap:.5rem;
+  margin-top:auto;
+  padding:.62rem 1.45rem;border-radius:100px;
+  background:var(--white);color:var(--ink);
+  font-family:var(--f-body);font-weight:700;font-size:.92rem;line-height:1.2;
+  transition:background .2s ease,color .2s ease;
+}
+.read:hover .read__cue{background:var(--accent);color:var(--white)}
+.read__cue span{transition:transform .2s ease}
+.read:hover .read__cue span{transform:translateX(3px)}
 </style>
 </head>
 <body>
@@ -699,73 +794,133 @@ figcaption{
       <div class="section-head">
         <h2>Interviews and Appearances</h2>
         <hr class="h-rule">
-        <p class="lede">Published conversations with Tom Scarpello, on the record, at their original sources.</p>
+        <p class="lede">Explore published interviews, podcasts, and media features featuring Tom Scarpello, where he discusses Revology Cars, automotive engineering, classic Mustang heritage, and the process behind building modern interpretations of iconic vehicles.</p>
       </div>
-      <div class="plog">
-        <a class="plog__row" href="https://www.detroitnews.com/story/business/autos/2023/06/24/payne-revology-mustang-startup-goes-back-to-the-future/70346156007/" rel="noopener" target="_blank">
-          <span class="plog__pub">The Detroit News</span>
-          <span>
-            <span class="plog__title">Payne: Revology Mustang startup goes back to the future</span>
-            <span class="plog__meta">Print &middot; 24 June 2023 &middot; Read the article <span aria-hidden="true">&rarr;</span></span>
+      <div class="pcards">
+        <a class="pcard" href="https://www.detroitnews.com/story/business/autos/2023/06/24/payne-revology-mustang-startup-goes-back-to-the-future/70346156007/" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--wordmark" src="https://www.detroitnews.com/sitelogos/m-oc.svg" alt="The Detroit News" width="513" height="73" loading="lazy" onerror="this.parentNode.remove()">
           </span>
+          <span class="pcard__pub">The Detroit News</span>
+          <span class="pcard__title">Payne: Revology Mustang startup goes back to the future</span>
+          <span class="pcard__quote">&ldquo;The V-8 engines are part of the experience. You just feel it.&rdquo;</span>
+          <span class="pcard__meta">Print &middot; 24 June 2023 &middot; Read the article <span aria-hidden="true">&rarr;</span></span>
         </a>
-        <a class="plog__row" href="https://www.youtube.com/watch?v=350A4eAXrIk" rel="noopener" target="_blank">
-          <span class="plog__pub">Cars and Culture with Jason Stein</span>
-          <span>
-            <span class="plog__title">CEO of Revology, Tom Scarpello &mdash; Cars and Culture Episode #131</span>
-            <span class="plog__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+        <a class="pcard" href="https://www.youtube.com/watch?v=350A4eAXrIk" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--mark" src="https://yt3.ggpht.com/_YdzUX2ELirAH-kto6s5kaGHsWZew3GFgtf8ItH8puCQdbso1ovMift4_az-O7OKbiID1C0xPWI=s400-c-k-c0x00ffffff-no-rj" alt="Cars and Culture with Jason Stein" width="400" height="400" loading="lazy" onerror="this.parentNode.remove()">
           </span>
+          <span class="pcard__pub">Cars and Culture with Jason Stein</span>
+          <span class="pcard__title">CEO of Revology, Tom Scarpello &mdash; Cars and Culture Episode #131</span>
+          <span class="pcard__quote">&ldquo;We build re-engineered versions of 1960s Mustang and Shelby GT models.&rdquo;</span>
+          <span class="pcard__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
         </a>
-        <a class="plog__row" href="https://themusclecarplace.com/podcast/tmcp-572-tom-scarpello-of-revology-cars-bringing-new-oem-quality-65-68-mustangs-into-the-21st-century/" rel="noopener" target="_blank">
-          <span class="plog__pub">The Muscle Car Place</span>
-          <span>
-            <span class="plog__title">TMCP #572: Tom Scarpello of Revology Cars &mdash; Bringing New &ldquo;OEM&rdquo; Quality &rsquo;65&ndash;&rsquo;68 Mustangs into the 21st Century</span>
-            <span class="plog__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+        <a class="pcard" href="https://creators.spotify.com/pod/profile/mustangownerspodcast/episodes/Tom-Scarpello---Founder---Revology-Cars-e235kp8" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--mark" src="https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo400/18224540/18224540-1745869196091-befae8ddc621.jpg" alt="Mustang Owner&rsquo;s Podcast" width="400" height="400" loading="lazy" onerror="this.parentNode.remove()">
           </span>
+          <span class="pcard__pub">Mustang Owner&rsquo;s Podcast</span>
+          <span class="pcard__title">Tom Scarpello &mdash; Founder &mdash; Revology Cars</span>
+          <span class="pcard__quote">&ldquo;That&rsquo;s what we did that&rsquo;s different.&rdquo;</span>
+          <span class="pcard__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
         </a>
-        <a class="plog__row" href="https://themusclecarplace.com/the-muscle-car-place-podcast/tmcp-363-tom-scarpello-of-revology-producing-brand-new-officially-licensed-oem-caliber-1960s-mustangs-and-shelbys/" rel="noopener" target="_blank">
-          <span class="plog__pub">The Muscle Car Place</span>
-          <span>
-            <span class="plog__title">TMCP #363: Tom Scarpello of Revology &mdash; Producing Brand New, Officially Licensed, OEM Caliber 1960&rsquo;s Mustangs and Shelbys</span>
-            <span class="plog__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+        <a class="pcard" href="https://motorweek.org/fyi/revology/" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--wordmark" src="https://motorweek.org/wp-content/themes/motorweek/assets/img/logo.svg" alt="MotorWeek" width="327" height="81" loading="lazy" onerror="this.parentNode.remove()">
           </span>
+          <span class="pcard__pub">MotorWeek</span>
+          <span class="pcard__title">Revology &mdash; MotorWeek FYI, Episodes 3638 and 3652</span>
+          <span class="pcard__quote">&ldquo;So we&rsquo;re taking that dream and kind of updating it and bringing it into this century.&rdquo;</span>
+          <span class="pcard__meta">Television &middot; Watch the segment <span aria-hidden="true">&rarr;</span></span>
         </a>
-        <a class="plog__row" href="https://www.youtube.com/watch?v=2ggp6wtnBb0" rel="noopener" target="_blank">
-          <span class="plog__pub">Autorestomod</span>
-          <span>
-            <span class="plog__title">Revology New Classic Convertible Mustang: Interview With Tom Scarpello, Episode 214</span>
-            <span class="plog__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+        <a class="pcard" href="https://themusclecarplace.com/the-muscle-car-place-podcast/tmcp-363-tom-scarpello-of-revology-producing-brand-new-officially-licensed-oem-caliber-1960s-mustangs-and-shelbys/" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--wordmark" src="https://themusclecarplace.com/wp-content/uploads/2019/05/TMCP_Logo_2019_web-768x263.png" alt="The Muscle Car Place" width="768" height="263" loading="lazy" onerror="this.parentNode.remove()">
           </span>
+          <span class="pcard__pub">The Muscle Car Place</span>
+          <span class="pcard__title">TMCP #363: Tom Scarpello of Revology &mdash; Producing Brand New, Officially Licensed, OEM Caliber 1960&rsquo;s Mustangs and Shelbys</span>
+          <span class="pcard__quote">&ldquo;Revology makes the cars relevant again.&rdquo;</span>
+          <span class="pcard__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
         </a>
-        <a class="plog__row" href="https://creators.spotify.com/pod/profile/mustangownerspodcast/episodes/Tom-Scarpello---Founder---Revology-Cars-e235kp8" rel="noopener" target="_blank">
-          <span class="plog__pub">Mustang Owner&rsquo;s Podcast</span>
-          <span>
-            <span class="plog__title">Tom Scarpello &mdash; Founder &mdash; Revology Cars</span>
-            <span class="plog__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+        <a class="pcard" href="https://www.youtube.com/watch?v=S9T3Ukq7Ri4" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--mark" src="https://yt3.ggpht.com/GRNSP0nwufx2sj3GVywuyOAmX787Q57LBYB6AnB0kTQFDe55cZTyaHRFVZ7VFa2iPSdySKWzWg=s176-c-k-c0x00ffffff-no-rj" alt="American Dream Machines" width="176" height="176" loading="lazy" onerror="this.parentNode.remove()">
           </span>
-        </a>
-        <a class="plog__row" href="https://www.youtube.com/watch?v=S9T3Ukq7Ri4" rel="noopener" target="_blank">
-          <span class="plog__pub">American Dream Machines</span>
-          <span>
-            <span class="plog__title">Revology, my personal interview with Tom Scarpello</span>
-            <span class="plog__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+          <span class="pcard__pub">American Dream Machines</span>
+          <span class="pcard__title">Revology, my personal interview with Tom Scarpello</span>
+          <span class="pcard__quote">&ldquo;It&rsquo;s not fun to drive, it&rsquo;s slow, it&rsquo;s unreliable, it smells like gas and there&rsquo;s no air conditioning &mdash; the memory is way better than the reality.&rdquo;</span>
+          <span class="pcard__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+        </a>        <a class="pcard" href="https://www.youtube.com/watch?v=2pVB1Lk6mCI" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--mark" src="https://yt3.ggpht.com/E8nM-FEvMMcf0JOxhamilnX-oiKrtU0IEFGPY8M7dw_DOmAc2IYHE0sJNQtOBu-WKNwbCemK=s176-c-k-c0x00ffffff-no-rj" alt="Jay Leno&rsquo;s Garage" width="176" height="176" loading="lazy" onerror="this.parentNode.remove()">
           </span>
+          <span class="pcard__pub">Jay Leno&rsquo;s Garage</span>
+          <span class="pcard__title">Revology 1968 Mustang GT 2+2 Fastback Cobra Jet</span>
+          <span class="pcard__quote">&ldquo;We don&rsquo;t like the term replica, because a replica is an exact copy. This is really a reproduction: it has the DNA of the original &rsquo;68 Mustang, but it&rsquo;s evolved with modern technology.&rdquo;</span>
+          <span class="pcard__meta">Video &middot; 18 March 2024 &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
         </a>
+        <a class="pcard" href="https://www.youtube.com/watch?v=2ggp6wtnBb0" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--mark" src="https://yt3.ggpht.com/ytc/AIdro_m_TfQTmWcs85p2R62kiC71QQAIbdLseYdzGVywKa-tylE=s176-c-k-c0x00ffffff-no-rj" alt="Autorestomod" width="176" height="176" loading="lazy" onerror="this.parentNode.remove()">
+          </span>
+          <span class="pcard__pub">Autorestomod</span>
+          <span class="pcard__title">Revology New Classic Convertible Mustang: Interview With Tom Scarpello, Episode 214</span>
+          <span class="pcard__quote">&ldquo;The idea behind it is the evolution through re-engineering. It takes the restomod concept and brings it up to another level, applying the same approach that a manufacturer like Ford takes when it develops a car.&rdquo;</span>
+          <span class="pcard__meta">Video &middot; Watch the interview <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="pcard" href="https://themusclecarplace.com/podcast/tmcp-572-tom-scarpello-of-revology-cars-bringing-new-oem-quality-65-68-mustangs-into-the-21st-century/" rel="noopener" target="_blank">
+          <span class="pcard__plate">
+            <img class="pcard__logo pcard__logo--wordmark" src="https://themusclecarplace.com/wp-content/uploads/2019/05/TMCP_Logo_2019_web-768x263.png" alt="The Muscle Car Place" width="768" height="263" loading="lazy" onerror="this.parentNode.remove()">
+          </span>
+          <span class="pcard__pub">The Muscle Car Place</span>
+          <span class="pcard__title">TMCP #572: Tom Scarpello of Revology Cars &mdash; Bringing New &ldquo;OEM&rdquo; Quality &rsquo;65&ndash;&rsquo;68 Mustangs into the 21st Century</span>
+          <span class="pcard__quote">&ldquo;It is about taking the classic muscle cars of the era and making them relevant again.&rdquo;</span>
+          <span class="pcard__meta">Podcast &middot; Listen to the episode <span aria-hidden="true">&rarr;</span></span>
+        </a>
+
       </div>
-      <p class="press__note">Every item above links to the publisher&rsquo;s own page. Titles and channel names are reproduced as the publishers give them; Revology Cars did not produce these interviews and does not control their content.</p>
     </div>
   </section>
 
-  <!-- ==================== FINAL CTA BANNER ==================== -->
-  <section class="final band--bone" aria-label="Contact Revology Cars">
-    <div class="wrap final__in">
-      <div class="final__copy">
-        <p class="final__t">Configure Your Precision-Engineered Mustang</p>
-        <p class="final__d">Create a modern interpretation of an iconic Mustang with guidance from our client relations team. Discuss your preferred model, specifications, availability, and current production timeline to begin your Revology journey.</p>
+  <!-- ==================== LATEST READS ==================== -->
+  <section class="band band--ink" id="reads" aria-label="Latest articles from Tom Scarpello">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The Latest Reads From Tom</h2>
+        <hr class="h-rule">
+        <p class="lede">Explore Tom Scarpello&rsquo;s latest articles and perspectives on classic Mustang heritage, automotive engineering, and the development behind Revology vehicles.</p>
       </div>
-      <div class="final__act">
-        <a class="btn btn--accent" href="https://revologycars.com/contact-us/">Contact Us</a>
-        <a class="btn btn--ghost" href="https://revologycars.com/#models">Explore the Models</a>
+      <div class="reads">
+        <a class="read" href="https://revologycars.com/why-this-1968-shelby-gt500-prototype-is-so-rare/" rel="noopener" target="_blank">
+          <span class="read__shot">
+            <img src="https://revologycars.com/wp-content/uploads/2026/08/1968-revology-shelby-gt500kr-fastback-335-01-768x512.webp" alt="Black 1968 Revology Shelby GT500KR Fastback parked on a tree-lined road in a front three-quarter view." width="768" height="512" loading="lazy">
+          </span>
+          <span class="read__date">12 September 2026</span>
+          <span class="read__title">Why This 1968 Shelby GT500 Prototype Is So Rare</span>
+          <span class="read__standfirst">The 1968 Shelby GT500 prototype is a pre-production test vehicle that exists outside normal manufacturing runs, built as a rolling laboratory for experimental technologies.</span>
+          <span class="read__cue">Read the article <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="read" href="https://revologycars.com/fastback-or-convertible-understanding-the-1968-mustang-gt-choice/" rel="noopener" target="_blank">
+          <span class="read__shot">
+            <img src="https://revologycars.com/wp-content/uploads/2026/09/1968-revology-mustang-gt-fastback-384-03-768x512.webp" alt="1968 Revology Mustang GT Fastback shown from a front three-quarter exterior view." width="768" height="512" loading="lazy">
+          </span>
+          <span class="read__date">11 September 2026</span>
+          <span class="read__title">Fastback or Convertible? Understanding the 1968 Mustang GT Choice</span>
+          <span class="read__standfirst">The 1968 Mustang GT is a first-generation icon offered in two distinct body styles: the Fastback and the Convertible. Each shares the same 108-inch wheelbase and the same engine lineup.</span>
+          <span class="read__cue">Read the article <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="read" href="https://revologycars.com/how-the-1968-mustang-gt-22-cobra-jet-fit-the-late-60s-market/" rel="noopener" target="_blank">
+          <span class="read__shot">
+            <img src="https://revologycars.com/wp-content/uploads/2026/09/1968-revology-mustang-gt-fastback-cobra-jet-347-1-768x512.webp" alt="1968 Revology Mustang GT Fastback Cobra Jet shown from the front three-quarter exterior view." width="768" height="512" loading="lazy">
+          </span>
+          <span class="read__date">10 September 2026</span>
+          <span class="read__title">How the 1968 Mustang GT 2+2 Cobra Jet Fit the Late-&rsquo;60s Market</span>
+          <span class="read__standfirst">The 1968 Mustang GT 2+2 Cobra Jet was one of Ford&rsquo;s factory answers to the late-1960s horsepower race, a purpose-built big-block fastback that matched dealer-lot accessibility with drag-strip credibility.</span>
+          <span class="read__cue">Read the article <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+      <div class="btn-row btn-row--center">
+        <a class="btn btn--accent" href="https://revologycars.com/featured-news/" rel="noopener" target="_blank">Read the News &amp; Blog</a>
       </div>
     </div>
   </section>
@@ -868,6 +1023,25 @@ figcaption{
             "name": "The Detroit News"
           },
           "datePublished": "2023-06-24"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Revology 1968 Mustang GT 2+2 Fastback Cobra Jet",
+          "url": "https://www.youtube.com/watch?v=2pVB1Lk6mCI",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Jay Leno’s Garage"
+          },
+          "datePublished": "2024-03-18"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Revology — MotorWeek FYI, Episodes 3638 and 3652",
+          "url": "https://motorweek.org/fyi/revology/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "MotorWeek"
+          }
         },
         {
           "@type": "CreativeWork",

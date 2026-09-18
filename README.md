@@ -183,11 +183,12 @@ A founder/author entity page. There is no live equivalent; the About page had a 
 Founder* button deliberately left inert with a `btn--pending` class and a comment saying how to
 activate it. That button is now a link to this page, and the placeholder CSS is gone.
 
-One H1 and six H2s: *Who Tom Scarpello Is*, *The Career Behind the Cars*, *What He Knows*,
-*In His Own Words*, *Interviews and Appearances*, *What He Built*.
+One H1 (*Tom Scarpello*) and five H2s: *From Ford Executive to Revology Founder*, *Skills and
+Expertise Behind Tom’s Vision*, *In His Own Words*, *Interviews and Appearances*, *The Latest
+Reads From Tom*. (This list had drifted out of date against the page; it is now accurate.)
 
 `ProfilePage` + `Person` JSON-LD with `jobTitle`, `worksFor`, `knowsAbout`, `sameAs`
-(LinkedIn) and `subjectOf` (the seven appearances). The About page's `Organization.founder` now
+(LinkedIn) and `subjectOf` (the nine appearances). The About page's `Organization.founder` now
 carries the same `@id`, so the founder is one entity across the site rather than a bare name on
 each page.
 
@@ -267,9 +268,67 @@ meet-the-team and homepage — or from a source that was fetched and checked whi
   Special Vehicle Team 1998–2004 — are from
   [revologycars.com/meet-the-team/](https://revologycars.com/meet-the-team/). The Jaguar /
   Nissan / Infiniti line and both quotes come from the About page copy already signed off.
-- **The seven appearances** each returned HTTP 200, and every YouTube title and channel name was
-  read from YouTube's oEmbed endpoint. Only the Detroit News piece carries a date, because it is
-  the only one whose date could be verified; the rest are listed without one rather than guessed.
+- **The nine appearances** each returned HTTP 200, and every YouTube title and channel name was
+  read from YouTube's own watch-page metadata. Two carry a date, because those are the two whose
+  dates could be verified: the Detroit News piece (24 June 2023) and the Jay Leno's Garage episode
+  (18 March 2024). The rest are listed without one rather than guessed.
+- **Tom appears in person** in both additions. The Jay Leno's Garage description reads "Tom
+  Scarpello from Revology joins Jay Leno to showcase a meticulously crafted 1968 Ford Mustang
+  reproduction"; MotorWeek's Revology segment quotes him on camera ("So we're taking that dream
+  and kind of updating it and bringing it into this century").
+- **Card quotes** are Tom’s own words from that same piece, and all nine cards carry one.
+  Three are published text on the publisher’s own page: The Detroit News quotes him in the article
+  body; MotorWeek publishes a speaker-labelled transcript of the FYI segment where the line is
+  tagged TOM SCARPELLO; and The Muscle Car Place closes the #572 show notes with a pull-quote
+  signed “– Tom Scarpello”. Three come from the YouTube transcript panel — Jay Leno’s Garage, Cars
+  and Culture, American Dream Machines — read in context so the speaker is not in doubt: Leno
+  introduces Tom at 0:48 and the quoted line answers his next question; the Cars and Culture line
+  answers the host asking what Revology does; the American Dream Machines line is mid-monologue in
+  an interview whose title names Tom as the only guest.
+- **Three quotes were supplied by Revology, not found in a published source:** TMCP #363,
+  Autorestomod and the Mustang Owner’s Podcast. Both episodes are audio or video with nothing to read back — Autorestomod publishes
+  no captions at all, #363’s show notes are the host writing about Tom rather than quoting him, and
+  both pages were searched for an attributed pull-quote of the kind #572 carries. Neither has one.
+  These three lines are on the cards on Revology’s own authority, having been confirmed as Tom’s.
+  The Mustang Owner’s Podcast line arrived as “That’s what we we did that’s different” and is set
+  with the doubled word dropped; it is also the only quote on the page that does not stand on its
+  own, since “that” has no referent on the card.
+  Anyone re-verifying this page will need the episode audio, not the page.
+- **The three transcript quotes carry a caveat.** YouTube offers only auto-generated captions for
+  these videos, which supply no punctuation and no speaker labels and can mis-transcribe a word
+  (the same transcripts render Revology as “rology” and Jay Leno’s Garage as “Jon’s garage”).
+  Sentences were chosen for short, plain wording where that risk is lowest, and the punctuation is
+  editorial. They are worth one spot-check against the video before the page goes live. The three
+  published-text quotes need no such check.
+- **All nine cards now carry a quote.**
+
+- **The closing CTA banner was removed** and replaced with *The Latest Reads From Tom*. The page
+  no longer carries a contact or models CTA; the reads section is now the last thing before the
+  footer.
+- **The three posts are the three most recent** on revologycars.com, pulled from the site’s own
+  WordPress REST API (`/wp-json/wp/v2/posts?_embed=wp:featuredmedia`) on 18 September 2026 —
+  titles, links, dates, excerpts, featured images and image alt text all come from that response,
+  not from hand-copying. They are dated 12, 11 and 10 September 2026. Being “latest”, they go
+  stale: re-pull the top three from that endpoint when the section is next touched.
+- **The cards follow Revology’s own blog-card pattern** (featured image, date, title, truncated
+  standfirst), per the reference screenshot. The band is dark rather than bone: the press grid
+  above it is bone, and two bone bands running together broke the alternation the rest of the page
+  keeps. The image box is a fixed 3:2 with `object-fit:cover`; the source files are already 768x512
+  so nothing is cropped today, but the box holds the grid steady if a future post arrives at a
+  different ratio. The standfirst is line-clamped in CSS rather than cut in the markup, so the
+  excerpt stays whole for screen readers and for anyone reading the source.
+- **The posts carry no byline on the live site.** They are all WordPress author ID 4, but that
+  user record is not exposed through the API, the post pages show no author name, and “Scarpello”
+  appears nowhere in their markup. The section heading claims them as Tom’s on Revology’s
+  authority. If the page is going to assert his authorship, the blog posts themselves should carry
+  his byline too — otherwise the claim is unsupported at the source it points to. No authorship
+  was added to the JSON-LD for the same reason.
+
+- **Publisher marks** are hotlinked from each publisher's own server — the Detroit News and
+  MotorWeek wordmark SVGs, The Muscle Car Place's PNG, the Spotify cover art, and the YouTube
+  channel avatars. Each was fetched and confirmed to return an image before being used. Any that
+  stops resolving removes its own bay via onerror rather than showing a broken frame or a
+  substitute mark.
 - Figures (170 employees, 20 countries) are stated as of **May 2026**, per the FAQ, and are
   labelled as such in the footer.
 
