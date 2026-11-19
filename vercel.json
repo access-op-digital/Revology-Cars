@@ -8,8 +8,12 @@
     { "source": "/author/tom-scarpello", "destination": "/tom-scarpello" },
     { "source": "/author", "destination": "/tom-scarpello" },
     { "source": "/meet-the-founder", "destination": "/tom-scarpello" },
-    { "source": "/car/1969-mustang-boss-429-fastback", "destination": "/1969-mustang-boss-429-fastback" },
-    { "source": "/car/1970-mustang-boss-302-fastback", "destination": "/1970-mustang-boss-302-fastback" }
+    { "source": "/car/1969-mustang-boss-429", "destination": "/1969-mustang-boss-429" },
+    { "source": "/car/1970-mustang-boss-302", "destination": "/1970-mustang-boss-302" }
+  ],
+  "redirects": [
+    { "source": "/car/1969-mustang-boss-429-fastback", "destination": "/car/1969-mustang-boss-429", "permanent": true },
+    { "source": "/car/1970-mustang-boss-302-fastback", "destination": "/car/1970-mustang-boss-302", "permanent": true }
   ],
   "headers": [
     {
